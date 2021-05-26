@@ -15,6 +15,7 @@
 {%- endif -%}
 
 <ul>
+    <div>测试代码-菜单 caidan</div>
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
