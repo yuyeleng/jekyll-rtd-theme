@@ -2,7 +2,9 @@ title: jekyll-rtd-theme
 description: Just another documentation theme compatible with GitHub Pages
 
 theme: null
-
+markdown: kramdown
+kramdown:
+input: GFM
 # debug:
 #   compress: true
 #   dist: false
