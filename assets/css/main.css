@@ -1,0 +1,16 @@
+.sidebar-wrap{
+	width: 220px;
+	background: #22262F;
+}
+.sidebar-wrap .header{
+	height: 80px;
+	background: #22262F;
+}
+.sidebar-wrap .header .title.pb-1{
+	padding: 0px 20px;
+	display: flex;
+	align-items: center;
+}
+.sidebar-wrap .header .logo-box{
+	width: 100%;
+}

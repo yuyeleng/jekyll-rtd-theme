@@ -9,7 +9,6 @@ input: GFM
 #   compress: true
 #   dist: false
 #   shortcodes: true
-
 readme_index:
   with_frontmatter: true
 
