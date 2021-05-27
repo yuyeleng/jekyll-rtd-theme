@@ -2,6 +2,10 @@
 	width: 260px;
 	background: #22262F;
 }
+.sidebar-wrap .sidebar .header, .sidebar-wrap .sidebar .toctree
+{
+	width: 260px;
+}
 .sidebar-wrap .sidebar
 {
 	width: 100% !important;
@@ -35,4 +39,11 @@
 	height: 36px;
 	font-size: 14px;
 }
-/*ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICg+oWjKf66IxwZRheh6sis1eemk6oZ5COQUKdpk3I62 1289586268@qq.com*/
+.menu-box .search .input-block::-webkit-input-placeholder{
+  color: #9B7967;
+  font-size: 14px;
+}
+/*ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICg+oWjKf66IxwZRheh6sis1eemk6oZ5COQUKdpk3I62 1289586268@qq.com
+ 
+ssh秘钥
+ * */
