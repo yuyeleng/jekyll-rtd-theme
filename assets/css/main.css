@@ -16,6 +16,7 @@
 	width: 100% !important;
 	padding: 0;
 	background: #22262F;
+	border-bottom: 1px solid #141418;
 }
 .sidebar-wrap .header .title{
 	padding: 0px 20px;
