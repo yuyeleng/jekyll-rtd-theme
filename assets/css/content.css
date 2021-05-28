@@ -14,6 +14,7 @@
 }
 .content-wrap.content-box .content{
     position: relative;
+    min-height: 100%;
 }
 .content-wrap.content-box .code-bg-box{
     background: #22262F;
@@ -31,6 +32,10 @@
     position: fixed;
     z-index: 100;
     top: 80px;
+    position: relative;
+    margin-bottom: 0px;
+    color: #E5E5E5;
+    font-size: 16px;
 }
 .content-wrap.content-box .code-bg-box .code-bg-title span{
     background: #22262F;
@@ -40,8 +45,7 @@
     display: inline-block;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>h1{
-    color: #E5E5E5;
-    font-size: 16px;
+    
     border-bottom: none;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge{
@@ -56,7 +60,7 @@
     clear: both;
     margin-bottom: 0;
 }
-.highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx{
+.highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s, .highlight .sa, .highlight .dl{
     color: #e6db74;
 }
 .highlight .mf, .highlight .mh, .highlight .il, .highlight .mi, .highlight .mo, .highlight .m, .highlight .mb, .highlight .mx{
@@ -69,6 +73,10 @@
     color: #66d9ef;
 }
 .markdown-body pre>code{
+    color: #E5E5E5;
+}
+.highlight .err{
+    background: none;
     color: #E5E5E5;
 }
 

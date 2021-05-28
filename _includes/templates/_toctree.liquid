@@ -24,7 +24,7 @@
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
 
-        {%- if level <= 2  %}
+        {%- if level <= 4  %}
             <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
                 <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                     {% comment  %}注释 {%- if item.sort -%}
