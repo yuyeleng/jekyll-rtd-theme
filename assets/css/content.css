@@ -21,6 +21,7 @@
     right: 0;
     top: 0px;
     height: 100%;
+    width: 40%;
 }
 .content-wrap.content-box .code-bg-box .code-bg-title{
     position: absolute;
@@ -31,11 +32,12 @@
 .content-wrap.content-box .code-bg-box .code-bg-title span{
     background: #22262F;
     color: #E5E5E5;
-    font-size: 16px;
+    font-size: 18px;
     padding: 10px 28px;
     display: inline-block;
 }
-.content-wrap.content-box .content>.main{
+.content-wrap.content-box .content>.markdown-box{
+    
     width: 60%;
 }
 @media screen and (min-width: 100px) and (max-width: 1000px) {
