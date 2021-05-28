@@ -66,6 +66,9 @@
 	color: #FFFFFF !important;
 	padding-left: 20px;
 }
+.menu-box .toctree>ul li a i{
+	display: none;
+}
 .menu-box .toctree>ul .toc.current a{
 	padding-left: 20px;
 	/* background: #C8AF88; */
