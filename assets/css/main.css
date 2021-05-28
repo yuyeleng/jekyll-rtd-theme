@@ -46,7 +46,7 @@
 }
 .menu-box .toctree>.caption{
 	color: #FFFFFF;
-	font-size: 20px;
+	font-size: 18px;
 	background: #22262F;
 	padding-left: 20px !important;
 	height: 60px;
@@ -54,11 +54,21 @@
 }
 .menu-box .toctree>ul li{
 	background: #141418;
-	color: #FFFFFF;
-	height: 60px;
-	line-height: 60px;
+	
+	
 }
-.menu-box .toctree>ul li.current{
+.menu-box .toctree>ul li a{
+	font-size: 16px;
+	height: 50px;
+	line-height: 50px;
+	padding: 0;
+	color: #FFFFFF !important;
+}
+.menu-box .toctree>ul .toc.current a{
+	padding-left: 20px;
+	background: #C8AF88;
+}
+.menu-box .toctree>ul .toc.current a.current{
 	background: #C8AF88;
 }
 /*ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICg+oWjKf66IxwZRheh6sis1eemk6oZ5COQUKdpk3I62 1289586268@qq.com
