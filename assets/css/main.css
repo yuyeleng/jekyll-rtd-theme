@@ -54,8 +54,9 @@
 }
 .menu-box .toctree>ul li{
 	background: #141418;
-	
-	
+}
+.menu-box .toctree>ul li.current{
+	background: #C8AF88;
 }
 .menu-box .toctree>ul li a{
 	font-size: 16px;
@@ -63,10 +64,11 @@
 	line-height: 50px;
 	padding: 0;
 	color: #FFFFFF !important;
+	padding-left: 20px;
 }
 .menu-box .toctree>ul .toc.current a{
 	padding-left: 20px;
-	background: #C8AF88;
+	/* background: #C8AF88; */
 }
 .menu-box .toctree>ul .toc.current a.current{
 	background: #C8AF88;
