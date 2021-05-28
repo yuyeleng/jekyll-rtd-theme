@@ -102,8 +102,14 @@
     .main-box {
         width: 1000px;
     }
-    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge, .content-wrap.content-box .content>.markdown-box .markdown-body>h1{
+    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge, .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title{
         float: none;
-        width: 60%;
+        width: 100%;
+    }
+    .content-wrap.content-box .content-box .markdown-body>*{
+        width: 100%;
+    }
+    .content-wrap.content-box .code-bg-box{
+        display: none;
     }
 }
