@@ -14,9 +14,9 @@
     </a>
 {%- endif -%}
 
-<ul>
-    <li style="color: red;">我是修改的</li>
+<ul class="_toctree-box">
     {% comment %} list file {% endcomment %}
+    <!--{% assign  %}-->
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
