@@ -66,6 +66,9 @@
 	color: #FFFFFF !important;
 	padding-left: 20px;
 }
+.menu-box .toctree>ul>li.current>a{
+	padding-left: 20px;
+}
 .menu-box .toctree>ul li .content-toc{
 	background: #141418;
 }
