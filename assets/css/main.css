@@ -71,7 +71,7 @@
 	background: #22262F;
 }
 .menu-box .toctree>ul>li>a:hover{
-	background: none;
+	background: none !important;
 	color: #C8AF88 !important;
 }
 .menu-box .toctree>ul li .content-toc{
