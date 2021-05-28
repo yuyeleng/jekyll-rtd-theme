@@ -18,10 +18,18 @@ layout: tasks/compress
         {%- include common/script.liquid -%}
         {%- include extra/head.html -%}
         <link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="../assets/css/menu.css"/>
+        <link rel="stylesheet" type="text/css" href="../assets/css/content.css"/>
     </head>
     <body class="container">
-        {%- include templates/sidebar.liquid -%}
-        {%- include templates/content.liquid -%}
+        <div class="main-box">
+            {%- include templates/header.liquid -%}
+            <div class="menu-content-box">
+                {%- include templates/sidebar.liquid -%}
+                {%- include templates/content.liquid -%}
+            </div>
+        </div>
+        
 
         <!-- {%- include templates/addons.liquid -%}
         {%- include extra/body.html -%}
