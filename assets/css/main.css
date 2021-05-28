@@ -1,6 +1,7 @@
 .sidebar-wrap{
 	width: 260px;
 	background: #22262F;
+	background: red;
 }
 .sidebar-wrap .sidebar .header, .sidebar-wrap .sidebar .toctree
 {
