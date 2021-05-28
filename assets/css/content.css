@@ -32,7 +32,6 @@
     position: fixed;
     z-index: 100;
     top: 80px;
-    position: relative;
     
 }
 .content-wrap.content-box .code-bg-box .code-bg-title span{
@@ -43,7 +42,6 @@
     display: inline-block;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>h1{
-    
     border-bottom: none;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge{
