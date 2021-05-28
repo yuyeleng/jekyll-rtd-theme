@@ -1,5 +1,7 @@
 .content-box .markdown-body>*{
     margin-left: 28px;
+    margin-right: 28px;
+    width: 60%;
 }
 .content-wrap{
     margin-left: 0px !important;
@@ -9,7 +11,6 @@
 }
 .content-wrap.content-box{
     max-width: 100% !important; 
-    
 }
 .content-wrap.content-box .content{
     position: relative;
@@ -38,7 +39,21 @@
 }
 .content-wrap.content-box .content>.markdown-box{
     
-    width: 60%;
+    /* width: 60%; */
+}
+.content-wrap.content-box .content>.markdown-box .highlighter-rouge{
+    float: right;
+    z-index: 100;
+    width: 40%;
+    margin-right: 0;
+    margin-left: 0;
+    background: #141418;
+}
+.content-wrap.content-box .content>.markdown-box .highlighter-rouge .highlight{
+    padding: 20px 28px;
+    border: none;
+    border-radius: 0;
+    background: none;
 }
 @media screen and (min-width: 100px) and (max-width: 1000px) {
     .main-box {
