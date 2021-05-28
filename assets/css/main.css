@@ -35,7 +35,7 @@
 	background: none;
 	box-shadow: none;
 	color: #9B7967;
-	border: 1px solid #9B7967;
+	border: 1px solid #CCCCCC;
 	border-radius: 4px;
 	height: 36px;
 	font-size: 14px;
@@ -70,6 +70,8 @@
 }
 .menu-box .toctree>ul .toc.current a.current{
 	background: #C8AF88;
+	border-top: none;
+	border-bottom: none;
 }
 /*ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICg+oWjKf66IxwZRheh6sis1eemk6oZ5COQUKdpk3I62 1289586268@qq.com
  
