@@ -9,6 +9,10 @@
 .sidebar-wrap .sidebar
 {
 	width: 100% !important;
+}
+.menu-box{
+	height: calc(100% - 80px);
+	width: 100%;
 	overflow-y: auto;
 }
 .sidebar-wrap .header{
@@ -99,8 +103,11 @@
  
 ssh秘钥
  * */
- .header-box-hot{
-	 width: 100%;
-	 height: 80px;
-	 background: #22262F;
+ .content-wrap{
+	 margin-left: 260px !important;
  }
+.header-box-hot{
+	width: 100%;
+	height: 80px;
+	background: #22262F;
+}
