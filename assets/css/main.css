@@ -55,9 +55,9 @@
 .menu-box .toctree>ul>li{
 	background: #22262F;
 }
-.menu-box .toctree>ul li.current{
+/* .menu-box .toctree>ul li.current{
 	background: #C8AF88;
-}
+} */
 .menu-box .toctree>ul li a{
 	font-size: 16px;
 	height: 50px;
@@ -77,12 +77,13 @@
 }
 .menu-box .toctree>ul li .content-toc li a:hover{
 	background: none;
-	color: #C8AF88;
+	color: #C8AF88 !important;
 }
 .menu-box .toctree>ul li a i{
 	display: none;
 }
-.menu-box .toctree>ul li.current>a, .menu-box  .toctree>ul .toc.current a.current{
+/* .menu-box .toctree>ul li.current>a,  */
+.menu-box  .toctree>ul .toc.current a.current{
 	background: #C8AF88;
 	border-top: none;
 	border-bottom: none;
