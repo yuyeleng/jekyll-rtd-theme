@@ -9,13 +9,18 @@
 }
 .content-wrap.content-box{
     max-width: 100% !important; 
+    
+}
+.content-wrap.content-box .content{
     position: relative;
 }
 .content-wrap.content-box .code-bg-box{
-    width: 40%;
     background: #22262F;
-    position: absolute; 
+    position: absolute;
     border-top: 1px solid #141418;
+    right: 0;
+    top: 0px;
+    height: 100%;
 }
 .content-wrap.content-box .code-bg-box .code-bg-title{
     position: absolute;
@@ -27,9 +32,10 @@
     background: #22262F;
     color: #E5E5E5;
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 10px 28px;
+    display: inline-block;
 }
-.content-wrap.content-box .content{
+.content-wrap.content-box .content>.main{
     width: 60%;
 }
 @media screen and (min-width: 100px) and (max-width: 1000px) {

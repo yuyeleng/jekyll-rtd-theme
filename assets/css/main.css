@@ -64,13 +64,14 @@ html,body,.main-box{
 	font-weight: bold;
 	color: #fff;
 	cursor: pointer;
-	position: absolute;
+	position: relative;
 }
 .header-box .nav-box .nav-item>a{
 	color: #fff;
+	text-decoration: none;
 }
 .header-box .nav-box .nav-item:hover::after, .header-box .nav-box .nav-item.active::after{
-	position: relative;
+	position: absolute;
 	content: "";
 	display: inline-block;
 	left: 0;
