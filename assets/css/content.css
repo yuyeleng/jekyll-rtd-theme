@@ -25,10 +25,12 @@
     width: 40%;
 }
 .content-wrap.content-box .code-bg-box .code-bg-title{
-    position: absolute;
     width: 100%;
     background: #2D2F37;
     padding: 1px 0;
+    position: fixed;
+    z-index: 100;
+    top: 80px;
 }
 .content-wrap.content-box .code-bg-box .code-bg-title span{
     background: #22262F;
@@ -37,17 +39,48 @@
     padding: 10px 28px;
     display: inline-block;
 }
-.content-wrap.content-box .content>.markdown-box{
-    
-    /* width: 60%; */
+.content-wrap.content-box .content>.markdown-box .markdown-body>h1{
+    color: #E5E5E5;
+    font-size: 16px;
+    border-bottom: none;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge{
     float: right;
-    z-index: 100;
+    z-index: 10;
     width: 40%;
     margin-right: 0;
     margin-left: 0;
     background: #141418;
+    padding-left: 20px;
+    padding-right: 20px;
+    clear: both;
+    margin-bottom: 0;
+}
+.highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx{
+    color: #e6db74;
+}
+.highlight .mf, .highlight .mh, .highlight .il, .highlight .mi, .highlight .mo, .highlight .m, .highlight .mb, .highlight .mx{
+    color: #ae81ff;
+}
+.highlight .c1{
+    color: #960050;
+}
+.highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr{
+    color: #66d9ef;
+}
+.markdown-body pre>code{
+    color: #E5E5E5;
+}
+
+.content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title{
+    float: right;
+    z-index: 10;
+    width: 40%;
+    margin-right: 0;
+    margin-left: 0;
+    background: #141418;
+    padding: 20px 20px;
+    clear: both;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight{
     padding: 20px 28px;
@@ -58,5 +91,9 @@
 @media screen and (min-width: 100px) and (max-width: 1000px) {
     .main-box {
         width: 1000px;
+    }
+    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge, .content-wrap.content-box .content>.markdown-box .markdown-body>h1{
+        float: none;
+        width: 60%;
     }
 }
