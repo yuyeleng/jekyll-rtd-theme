@@ -1,4 +1,4 @@
-.sidebar-wrap{
+.sidebar-wrap, .sidebar{
 	width: 260px;
 	background: #22262F;
 }
@@ -79,7 +79,7 @@
 .menu-box .toctree>ul li a i{
 	display: none;
 }
-.menu-box .toctree>ul li.current>a{
+.menu-box .toctree>ul li.current>a, .menu-box  .toctree>ul .toc.current a.current{
 	background: #C8AF88;
 	border-top: none;
 	border-bottom: none;
