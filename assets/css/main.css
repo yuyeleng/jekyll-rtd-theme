@@ -44,6 +44,23 @@
   color: #9B7967;
   font-size: 14px;
 }
+.menu-box .toctree>.caption{
+	color: #FFFFFF;
+	font-size: 20px;
+	background: #22262F;
+	padding-left: 20px !important;
+	height: 60px;
+	line-height: 60px;
+}
+.menu-box .toctree>ul li{
+	background: #141418;
+	color: #FFFFFF;
+	height: 60px;
+	line-height: 60px;
+}
+.menu-box .toctree>ul li.current{
+	background: #C8AF88;
+}
 /*ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICg+oWjKf66IxwZRheh6sis1eemk6oZ5COQUKdpk3I62 1289586268@qq.com
  
 ssh秘钥
