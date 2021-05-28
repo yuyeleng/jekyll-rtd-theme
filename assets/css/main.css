@@ -70,6 +70,10 @@
 	padding-left: 20px;
 	background: #22262F;
 }
+.menu-box .toctree>ul>li:not(.current)>a:hover{
+	background: none;
+	color: #C8AF88 !important;
+}
 .menu-box .toctree>ul li .content-toc{
 	background: #141418;
 }
@@ -85,7 +89,7 @@
 }
 /* .menu-box .toctree>ul li.current>a,  */
 .menu-box  .toctree>ul .toc.current a.current{
-	background: #C8AF88;
+	background: #C8AF88  !important;
 	border-top: none;
 	border-bottom: none;
 }
