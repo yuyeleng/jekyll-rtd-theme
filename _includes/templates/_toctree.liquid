@@ -15,7 +15,6 @@
 {%- endif -%}
 
 <ul>
-    <li style="color: red; display: none;">我是修改的</li>
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
