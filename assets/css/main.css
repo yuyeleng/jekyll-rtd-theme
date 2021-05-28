@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+ul,li{
+	list-style: none;
+}
 html,body,.main-box{
 	width: 100%;
 	height: 100%;
@@ -21,6 +24,7 @@ html,body,.main-box{
 	width: 260px;
 	background: #22262F;
 	overflow-y: auto;
+	position: static;
 }
 .sidebar{
 	width: 260px;
@@ -37,6 +41,7 @@ html,body,.main-box{
 .header-box .logo-box{
 	width: 260px;
 	height: 100%;
+	padding: 0 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -44,21 +49,22 @@ html,body,.main-box{
 .header-box .logo-box img{
 	width: 100%;
 }
-.header-box .logo-box .nav-box{
+.header-box .nav-box{
 	flex: 1;
 	height: 100%;
 }
-.header-box .logo-box .nav-box .nav-item{
+.header-box .nav-box .nav-item{
 	display: flex;
 	align-items: center;
 	height: 100%;
 	padding: 0 20px;
 	font-size: 20px;
 	font-weight: bold;
+	color: #fff;
 }
-.header-box .logo-box .nav-box .nav-item.active{
+.header-box .nav-box .nav-item.active{
 	border-bottom: 3px solid #C8AF88;
 }
-.header-box .logo-box .nav-box .nav-item:hover{
+.header-box .nav-box .nav-item:hover{
 	border-bottom: 3px solid #C8AF88;
 }

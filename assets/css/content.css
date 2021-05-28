@@ -2,5 +2,8 @@
     padding-left: 28px;
 }
 .content-wrap{
-    margin-left: 260px !important;
+    margin-left: 0px !important;
+}
+.content-box .markdown-body{
+    padding: 30px 0;
 }
