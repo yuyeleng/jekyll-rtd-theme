@@ -52,7 +52,7 @@
 	height: 60px;
 	line-height: 60px;
 }
-.menu-box .toctree>ul li{
+.menu-box .toctree>ul>li{
 	background: #22262F;
 }
 .menu-box .toctree>ul li.current{
@@ -79,7 +79,7 @@
 .menu-box .toctree>ul li a i{
 	display: none;
 }
-.menu-box .toctree>ul .toc.current a.current{
+.menu-box .toctree>ul li.current>a{
 	background: #C8AF88;
 	border-top: none;
 	border-bottom: none;
