@@ -25,6 +25,7 @@ html,body,.main-box{
 	background: #22262F;
 	overflow-y: auto;
 	position: static;
+	border-top: 1px solid #141418;
 }
 .sidebar{
 	width: 260px;
@@ -52,6 +53,7 @@ html,body,.main-box{
 .header-box .nav-box{
 	flex: 1;
 	height: 100%;
+	display: flex;
 }
 .header-box .nav-box .nav-item{
 	display: flex;
@@ -61,10 +63,19 @@ html,body,.main-box{
 	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
+	cursor: pointer;
+	position: absolute;
 }
-.header-box .nav-box .nav-item.active{
-	border-bottom: 3px solid #C8AF88;
+.header-box .nav-box .nav-item>a{
+	color: #fff;
 }
-.header-box .nav-box .nav-item:hover{
-	border-bottom: 3px solid #C8AF88;
+.header-box .nav-box .nav-item:hover::after, .header-box .nav-box .nav-item.active::after{
+	position: relative;
+	content: "";
+	display: inline-block;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 3px;
+	background: #C8AF88;
 }
