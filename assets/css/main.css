@@ -94,7 +94,13 @@
 	border-top: none;
 	border-bottom: none;
 }
+
 /*ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICg+oWjKf66IxwZRheh6sis1eemk6oZ5COQUKdpk3I62 1289586268@qq.com
  
 ssh秘钥
  * */
+ .header-box-hot{
+	 width: 100%;
+	 height: 80px;
+	 background: #22262F;
+ }
