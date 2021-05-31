@@ -1,5 +1,6 @@
 {%- include common/rest/workdir.liquid %}
-
+{%- assign dir = site_pages | where: "url", workdir | first -%}
+{% assign dirUrl = dir.url | split: "/" %}{% comment %} 截取目录文件夹的路径，这个和头部导航的相关联 {% endcomment %}
 <div class="header-box">
     <div class="logo-box">
         <img class="logo" src="../../assets/img/logo.png" />
@@ -14,6 +15,8 @@
         <li class="nav-item">
             <a>交割合约</a>
         </li>
+        <li>{{ dirUrl }}</li>
+        <li>{{ workdir_files }}--workdir_files</li>
         {%- for item in workdir_files -%}
             <a>{{item}}</a>
             {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
