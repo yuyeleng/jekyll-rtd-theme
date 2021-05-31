@@ -1,3 +1,5 @@
+{%- include common/rest/workdir.liquid %}
+
 <div class="header-box">
     <div class="logo-box">
         <img class="logo" src="../../assets/img/logo.png" />
@@ -12,5 +14,23 @@
         <li class="nav-item">
             <a>交割合约</a>
         </li>
+        {%- for item in workdir_files -%}
+            <a>{{item}}</a>
+            {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
+            {%- capture current -%}
+                {%- if page.url == item.url %}current{% endif -%}
+            {%- endcapture %}
+
+            <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+                <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
+                     {%- if item.sort -%}
+                        {{ item.sort }}. {{ item.title | default: item.name }}
+                    {%- else -%}
+                        {{ item.title | default: item.name }}
+                    {%- endif -%}
+                    {{ item.title }}
+                </a>
+            </li>
+        {%- endfor -%}
     </ul>
 </div>
