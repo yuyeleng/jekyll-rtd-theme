@@ -15,24 +15,17 @@
     </a>
 {%- endif -%}
 {% endcomment %}
-{% assign dirUrl = dir.url | split: "/" %}{% comment %} 截取目录文件夹的路径，这个和头部导航的相关联 {% endcomment %}
-<ul class="{{ dirUrl[1] }}">
-    {%- for item in workdir_files -%}
-    <!-- <a>{{item}}</a> -->
-        {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
-        {%- capture current -%}
-            {%- if page.url == item.url %}current{% endif -%}
-        {%- endcapture %}
+{%- for item in workdir_files -%}
+<!-- <a>{{item}}</a> -->
+    {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
+    {%- assign itemName = item.name | split: '.' -%}
+    {%- capture current -%}
+        {%- if page.url == item.url %}current{% endif -%}
+    {%- endcapture %}
 
-        <li class="nav-item {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-            <a class="nav-item-a {{ current }}" href="{{ item.url | relative_url }}">
-                {%- if item.sort -%}
-                    {{ item.sort }}. {{ item.title | default: item.name }}
-                {%- else -%}
-                    {{ item.title | default: item.name }}
-                {%- endif -%}
-                -{{ item.title }}
-            </a>
-        </li>
-    {%- endfor -%}
-</ul>
+    <li class="nav-item {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+        <a class="nav-item-a {{ current }}" href="{{ item.url | relative_url }}">
+            {{ itemName[0] }}
+        </a>
+    </li>
+{%- endfor -%}
