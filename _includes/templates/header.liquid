@@ -6,7 +6,7 @@
         <img class="logo" src="../../assets/img/logo.png" />
     </div>
     <ul class="nav-box">
-        <!-- <li class="nav-item active">
+        <li class="nav-item active">
             <a>现货</a>
         </li>
         <li class="nav-item">
@@ -14,7 +14,12 @@
         </li>
         <li class="nav-item">
             <a>交割合约</a>
-        </li> -->
+        </li>
+        <li>{{ dirUrl }}</li>
+        <li>
+            <!-- 123 -->
+            <!-- {% include templates/toctree.liquid %} -->
+        </li>
         <!-- <li>{{ workdir_files }}--workdir_files</li> -->
         {%- for item in workdir_files -%}
             <!-- <a>{{item}}</a> -->
@@ -30,7 +35,7 @@
                     {%- else -%}
                         {{ item.title | default: item.name }}
                     {%- endif -%}
-                   - {{ item.title }}
+                    -{{ item.title }}
                 </a>
             </li>
         {%- endfor -%}
