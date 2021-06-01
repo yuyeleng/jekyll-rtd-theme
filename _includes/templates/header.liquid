@@ -15,29 +15,7 @@
         <li class="nav-item">
             <a>交割合约</a>
         </li>
-        <li>{{ dirUrl }}</li>
-        <li>
-            <!-- 123 -->
-            <!-- {% include templates/toctree.liquid %} -->
-        </li>
-        <!-- <li>{{ workdir_files }}--workdir_files</li> -->
-        {%- for item in workdir_files -%}
-            <!-- <a>{{item}}</a> -->
-            {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
-            {%- capture current -%}
-                {%- if page.url == item.url %}current{% endif -%}
-            {%- endcapture %}
-
-            <li class="nav-item {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-                <a class="nav-item-a {{ current }}" href="{{ item.url | relative_url }}">
-                     {%- if item.sort -%}
-                        {{ item.sort }}. {{ item.title | default: item.name }}
-                    {%- else -%}
-                        {{ item.title | default: item.name }}
-                    {%- endif -%}
-                    -{{ item.title }}
-                </a>
-            </li>
-        {%- endfor -%}
+        {%- for workdir in workdir_dirs %}{% include templates/header_menu.liquid %}{% endfor -%}
+        
     </ul>
 </div>
