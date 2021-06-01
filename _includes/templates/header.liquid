@@ -6,7 +6,7 @@
         <img class="logo" src="../../assets/img/logo.png" />
     </div>
     <ul class="nav-box">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
             <a>现货</a>
         </li>
         <li class="nav-item">
@@ -14,22 +14,17 @@
         </li>
         <li class="nav-item">
             <a>交割合约</a>
-        </li>
-        <li>{{ dirUrl }}</li>
-        <li>
-            <!-- 123 -->
-            <!-- {% include templates/toctree.liquid %} -->
-        </li>
+        </li> -->
         <!-- <li>{{ workdir_files }}--workdir_files</li> -->
         {%- for item in workdir_files -%}
             <!-- <a>{{item}}</a> -->
             {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
-            {%- capture current -%}
-                {%- if page.url == item.url %}current{% endif -%}
+            {%- capture active -%}
+                {%- if page.url == item.url %}active{% endif -%}
             {%- endcapture %}
 
-            <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-                <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
+            <li class="nav-item {{ active }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+                <a class="d-flex flex-items-baseline {{ active }}" href="{{ item.url | relative_url }}">
                      {%- if item.sort -%}
                         {{ item.sort }}. {{ item.title | default: item.name }}
                     {%- else -%}
