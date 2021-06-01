@@ -17,12 +17,12 @@
         </li>
         <li>{{ dirUrl }}</li>
         <li>
-            123
-            {% include templates/toctree.liquid %}
+            <!-- 123 -->
+            <!-- {% include templates/toctree.liquid %} -->
         </li>
-        <li>{{ workdir_files }}--workdir_files</li>
+        <!-- <li>{{ workdir_files }}--workdir_files</li> -->
         {%- for item in workdir_files -%}
-            <a>{{item}}</a>
+            <!-- <a>{{item}}</a> -->
             {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
             {%- capture current -%}
                 {%- if page.url == item.url %}current{% endif -%}
