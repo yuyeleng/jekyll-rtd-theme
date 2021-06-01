@@ -19,18 +19,18 @@
         {%- for item in workdir_files -%}
             <!-- <a>{{item}}</a> -->
             {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
-            {%- capture active -%}
-                {%- if page.url == item.url %}active{% endif -%}
+            {%- capture current -%}
+                {%- if page.url == item.url %}current{% endif -%}
             {%- endcapture %}
 
-            <li class="nav-item {{ active }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-                <a class="d-flex flex-items-baseline {{ active }}" href="{{ item.url | relative_url }}">
+            <li class="nav-item {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+                <a class="nav-item-a {{ current }}" href="{{ item.url | relative_url }}">
                      {%- if item.sort -%}
                         {{ item.sort }}. {{ item.title | default: item.name }}
                     {%- else -%}
                         {{ item.title | default: item.name }}
                     {%- endif -%}
-                    {{ item.title }}
+                   - {{ item.title }}
                 </a>
             </li>
         {%- endfor -%}
