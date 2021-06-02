@@ -30,10 +30,7 @@
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
         <span style="display: none;">{{page.url}}---{{item.url}}</span>
-        <span style="display: none;">{{level1}}</span>
-        <span style="display: none;">{{level2}}</span>
-        <span style="display: none;">{{level3}}</span>
-        <span style="display: none;">{{level4}}</span>
+        <span style="display: none;">{{item}}</span>
         <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                 {% comment  %}注释 {%- if item.sort -%}
@@ -46,9 +43,9 @@
                 {% comment  %}{{ item.name }}{% endcomment %}
             </a>
             <ul class="menu-child-uls">
-                {%- for itemChils in item.content -%}
-                {% assign newItem = itemChils | split: "<h3" | split: '</h3>' %}
-                    <li class="menu-child-lis1">{{ newItem }}---</li>
+            {% assign newItem = item.content | split: "<h3" | split: '</h3>' %}
+                {%- for itemChils in newItem -%}
+                <li class="menu-child-lis1">{{ itemChils.strip_html }}---</li>
                 {%- endfor -%}
             </ul>
         </li>
