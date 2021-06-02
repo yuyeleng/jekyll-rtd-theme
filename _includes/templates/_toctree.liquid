@@ -16,8 +16,8 @@
 {%- endif -%}
 {% endcomment %}
 {% assign dirUrl = dir.url | split: "/" %}{% comment %} 截取目录文件夹的路径，这个和头部导航的相关联 {% endcomment %}
-<div>{{ dir }}---dir</div>
-<div>{{ dirUrl }}---dirUrl</div>
+<!-- <div>{{ dir }}---dir</div>
+<div>{{ dirUrl }}---dirUrl</div> -->
 <ul class="{{ dirUrl[1] }}">
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
