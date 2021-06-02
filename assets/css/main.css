@@ -80,3 +80,6 @@ html,body,.main-box{
 	height: 3px;
 	background: #C8AF88;
 }
+.d-none, .toc>ul{
+	display: block !important;
+}
