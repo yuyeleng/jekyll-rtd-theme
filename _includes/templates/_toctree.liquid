@@ -40,10 +40,10 @@
             </a>
             <ul class="menu-child-uls">
                 {%- for itemChils in item -%}
-                    <li class="menu-child-lis1">{{ itemChils | append: "temp" }}---</li>
-                    <li class="menu-child-lis2">{{ itemChils | append: "temp" | replace_first: "/", "" }}---</li>
-                    <li class="menu-child-lis3">{{ itemChils | append: "temp" | replace_first: "/", "" | split: "/" | size }}---</li>
-                    <li class="menu-child-lis4">{{ itemChils | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 }}</li>
+                    <li class="menu-child-lis1">{{ itemChils.content | append: "temp" }}---</li>
+                    <li class="menu-child-lis2">{{ itemChils.content | append: "temp" | replace_first: "/", "" }}---</li>
+                    <li class="menu-child-lis3">{{ itemChils.content | append: "temp" | replace_first: "/", "" | split: "/" | size }}---</li>
+                    <li class="menu-child-lis4">{{ itemChils.content | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 }}</li>
                 {%- endfor -%}
             </ul>
         </li>
