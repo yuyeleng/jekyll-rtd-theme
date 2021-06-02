@@ -45,7 +45,7 @@
             <ul class="menu-child-uls">
             {% assign newItem = item.content | split: "<h3" | split: '</h3>' %}
                 {%- for itemChils in newItem -%}
-                <li class="menu-child-lis1">{{ itemChils.strip_html }}---</li>
+                <li class="menu-child-lis1">{{ itemChils }}---</li>
                 {%- endfor -%}
             </ul>
         </li>
