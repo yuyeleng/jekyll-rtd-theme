@@ -1,8 +1,6 @@
 $(function(){
-    var itemHide = $(".menu-ul>.toc").eq(1).children('.itemHide').html()
-    console.log(itemHide)
-    var str = itemHide.split('<h3')
-    console.log(str)
+    var itemH3 = $(".menu-uls>.toc").children('.itemHide').find('h3').text()
+    console.log(itemH3)
 
 
 
