@@ -1,6 +1,7 @@
 $(function(){
     var itemHide = $(".menu-ul>.toc").eq(1).children('.itemHide').html()
-    var str = eval('(' + itemHide + ')')
+    console.log(itemHide)
+    var str = itemHide.split('<h3')
     console.log(str)
 
 
