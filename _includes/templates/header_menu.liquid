@@ -22,6 +22,9 @@
     {%- endcapture %}
 
     <li class="nav-item {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+        <span style="display: none;">{{workdir_files}}</span>
+        <span style="display: none;">{{dir}}</span>
+        <span style="display: none;">{{item}}</span>
         <a class="nav-item-a flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
             {{item.title}}
         </a>
@@ -31,5 +34,5 @@
 {% comment %} list dirs {% endcomment %}
 {%- for workdir in workdir_dirs -%}
     {%- assign level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 2 %}
-    <li class="nav-item level-{{ level }} new-lis">{% include templates/_toctree.liquid %}</li>
+    <li class="nav-item level-{{ level }} new-lis">{% include templates/header_menu.liquid %}</li>
 {%- endfor -%}
