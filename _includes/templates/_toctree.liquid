@@ -38,6 +38,11 @@
                 {{ item.title }}
                 {% comment  %}{{ item.name }}{% endcomment %}
             </a>
+            <ul class="menu-child-uls">
+                {%- for itemChils in item -%}
+                    <li class="menu-child-lis">{{ itemChils }}</li>
+                {%- endfor -%}
+            </ul>
         </li>
         
     {%- endfor -%}
