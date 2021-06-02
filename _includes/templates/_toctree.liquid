@@ -21,12 +21,19 @@
 <ul class="menu-uls {{ dirUrl[1] }}">
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
+        {%- assign level1 = item.dir | append: "temp" -%}
+        {%- assign level2 = item.dir | append: "temp" | replace_first: "/", "" -%}
+        {%- assign level3 = item.dir | append: "temp" | replace_first: "/", "" | split: "/" -%}
+        {%- assign level4 = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
         <span style="display: none;">{{page.url}}---{{item.url}}</span>
-        <span style="display: none;">{{item}}</span>
+        <span style="display: none;">{{level1}}</span>
+        <span style="display: none;">{{level2}}</span>
+        <span style="display: none;">{{level3}}</span>
+        <span style="display: none;">{{level4}}</span>
         <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                 {% comment  %}注释 {%- if item.sort -%}
