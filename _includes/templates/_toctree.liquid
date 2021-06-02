@@ -18,14 +18,15 @@
 {% assign dirUrl = dir.url | split: "/" %}{% comment %} 截取目录文件夹的路径，这个和头部导航的相关联 {% endcomment %}
 <!-- <div>{{ dir }}---dir</div>
 <div>{{ dirUrl }}---dirUrl</div> -->
-<ul class="{{ dirUrl[1] }}">
+<ul class="menu-uls {{ dirUrl[1] }}">
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
-        <span>{{page.url}}---{{item.url}}</span>
+        <span style="display: none;">{{page.url}}---{{item.url}}</span>
+        <span style="display: none;">{{item}}</span>
         <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                 {% comment  %}注释 {%- if item.sort -%}
