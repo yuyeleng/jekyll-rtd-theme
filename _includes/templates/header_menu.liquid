@@ -3,7 +3,7 @@
 {% comment %} display the directory name {% endcomment %}
 {%- assign dir = site_pages | where: "url", workdir | first -%}
 
-<!-- {%- if workdir_level == 2 %}
+{%- if workdir_level == 2 %}
     {% comment %} ---中英文--- display the root sub-directory as "p.caption" {% endcomment %}
     <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="{{ dir.url | relative_url }}">
         {{ dir.title | default: dir.url }}
@@ -12,24 +12,7 @@
     <a class="d-flex flex-items-baseline" href="{{ dir.url | relative_url }}">
         {{ dir.title | default: dir.url }}
     </a>
-{%- endif -%} -->
-
-{% comment %} list file {% endcomment %}
-{%- for item in workdir_files -%}
-    {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
-    {%- capture current -%}
-        {%- if page.url == item.url %}current{% endif -%}
-    {%- endcapture %}
-
-    <li class="nav-item {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-        <span style="display: none;">{{workdir_files}}</span>
-        <span style="display: none;">{{dir}}</span>
-        <span style="display: none;">{{item}}</span>
-        <a class="nav-item-a flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
-            {{item.title}}
-        </a>
-    </li>
-{%- endfor -%}
+{%- endif -%}
 
 {% comment %} list dirs {% endcomment %}
 {%- for workdir in workdir_dirs -%}
