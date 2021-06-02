@@ -1,6 +1,6 @@
 $(function(){
     var itemHide = $(".menu-ul>.toc").eq(1).children('.itemHide').html()
-    console.log(JSON.parse(itemHide))
+    console.log(eval(itemHide))
 
 
 
