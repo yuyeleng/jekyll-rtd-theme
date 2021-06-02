@@ -40,7 +40,7 @@
             </a>
             <ul class="menu-child-uls">
                 {%- for itemChils in item.content -%}
-                {% assign newItem = itemChils | replace: "h3", "/" %}
+                {% assign newItem = itemChils | split: "<h3" | split: '</h3>' %}
                     <li class="menu-child-lis1">{{ newItem }}---</li>
                 {%- endfor -%}
             </ul>
