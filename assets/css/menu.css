@@ -111,6 +111,9 @@
 .toctree>ul.menu-uls>.toc.current{
 	background: #22262F;
 }
+.search{
+	padding: 10px 20px;
+}
 .form-search{
 	border: 1px solid #CCCCCC;
     border-radius: 4px;
@@ -118,7 +121,6 @@
 	align-items: center;
 	height: 36px;
 	width: 100%;
-	margin: 10px 20px;
 }
 .search-img{
 	width: 16px;
@@ -132,6 +134,7 @@
 	border: none;
 	height: 36px;
 	font-size: 14px;
+	padding-left: 0;
 }
 .menu-box .search .input-block::-webkit-input-placeholder{
   color: #9B7967;
