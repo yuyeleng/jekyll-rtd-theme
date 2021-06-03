@@ -9,8 +9,10 @@ $(function(){
     
     console.log(pageUrl)
     if(pageUrl === '/' || !pageUrl){
+        
         lang = 'zh'
         pageUrl = $(".header-box>.nav-box>.nav-item."+ lang +">a").attr('href')
+        window.location.href = locaHref + pageUrl
     }else{
         lang = pageUrl.split('/')[1]
     }
