@@ -8,7 +8,7 @@ $(function(){
     var lang = ""
     
     console.log(pageUrl)
-    if(!pageUrl){
+    if(pageUrl === '/' || !pageUrl){
         lang = 'zh'
         pageUrl = $(".header-box>.nav-box>.nav-item."+ lang +">a").attr('href')
     }else{
