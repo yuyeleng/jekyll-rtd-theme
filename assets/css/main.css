@@ -63,7 +63,7 @@ html,body,.main-box{
 	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
-	cursor: pointer;
+	/* cursor: pointer; */
 	position: relative;
 }
 .header-box .nav-box .nav-item>a{
@@ -87,6 +87,7 @@ html,body,.main-box{
 	width: 80px;
 	display: flex;
 	align-items: center;
+	margin-right: 30px;
 }
 .lang{
 	width: 100%;
@@ -97,6 +98,6 @@ html,body,.main-box{
 	border: 1px solid #9B7967;
 	padding: 3px 5px;
 	display: inline-block;
-	margin-right: 30px;
+	
 	font-size: 14px;
 }
