@@ -3,43 +3,15 @@
 {% comment %} display the directory name {% endcomment %}
 {%- assign dir = site_pages | where: "url", workdir | first -%}
 
-<!-- {%- if workdir_level == 2 %}
-    {% comment %} ---中英文--- display the root sub-directory as "p.caption" {% endcomment %}
-    <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="{{ dir.url | relative_url }}">
-        {{ dir.title | default: dir.url }}
-    </a>
-{%- else %}
-    <a class="d-flex flex-items-baseline" href="{{ dir.url | relative_url }}">
-        {{ dir.title | default: dir.url }}
-    </a>
-{%- endif -%} -->
 {% assign dirUrl = dir.url | split: "/" %}
 {% if dirUrl[1] == 'zh' -%}
 <li class="nav-item">
+    {% if workdir_files[0].url != '' -%}
     <a href="{{workdir_files[0].url}}">{{dir.title}}</a>
+    {% endif -%}
 </li>
 {% endif -%}
-<!-- <ul class="nav-box {{ dirUrl[1] }}" data-url=" {{ dirUrl[1] }}"> -->
-    
-    {% comment %} list file 
-    {%- for item in workdir_files -%}
-        {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
-        {%- capture current -%}
-            {%- if page.url == item.url %}current{% endif -%}
-        {%- endcapture %}
-
-        <li style="display: none;" class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-            <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
-                {{item.title}}
-            </a>
-        </li>
-    {%- endfor -%}
-    {% endcomment %}
-    {% comment %} list dirs {% endcomment %}
-    
-<!-- </ul> -->
 {%- for workdir in workdir_dirs -%}
-        {%- assign level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 2 %}
-        <!-- <li class="toc for-li level-{{ level }}"></li> -->
-        {% include templates/header_menu.liquid %}
-    {%- endfor -%}
+    {%- assign level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 2 %}
+    {% include templates/header_menu.liquid %}
+{%- endfor -%}
