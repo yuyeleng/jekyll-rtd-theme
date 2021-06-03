@@ -3,8 +3,8 @@ $(function(){
     console.log(itemH3)
 
     //头部导航栏切换
-    $(".nav-box>.nav-item").click(function(){
-        $(this).addClass('active').siblings().removeClass('active')
+    $(".nav-box>.nav-item>a").click(function(){
+        $(this).parent('.nav-item').addClass('active').siblings().removeClass('active')
     })
 
 })

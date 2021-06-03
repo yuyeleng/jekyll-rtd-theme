@@ -83,10 +83,14 @@ html,body,.main-box{
 .d-none, .toc>ul{
 	display: block !important;
 }
-/* .lang-box{
+.lang-box{
 	width: 80px;
-} */
+	display: flex;
+	align-items: center;
+}
 .lang{
+	width: 100%;
+	text-align: center;
 	cursor: pointer;
 	color: #9B7967;
 	border-radius: 3px;
@@ -94,4 +98,5 @@ html,body,.main-box{
 	padding: 3px 5px;
 	display: inline-block;
 	margin-right: 30px;
+	font-size: 14px;
 }

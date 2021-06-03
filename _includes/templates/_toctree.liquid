@@ -41,7 +41,7 @@
     {% comment %} list dirs {% endcomment %}
     {%- for workdir in workdir_dirs -%}
         {%- assign level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 2 %}
-        <li class="toc for-li level-{{ level }}">{% include templates/_toctree.liquid %}</li>
+        {% include templates/_toctree.liquid %}
     {%- endfor -%}
 </ul>
 {%- endif -%}
