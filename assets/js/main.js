@@ -1,15 +1,10 @@
 $(function(){
-    var itemH3 = $(".menu-uls>.toc").children('.itemHide').find('h3').text()
-    console.log(itemH3)
-
     var locaHref = location.href
-    // var locaOrigin = location.origin
     var pageUrl = location.pathname
     var lang = ""
     
-    console.log(pageUrl)
+    // console.log(pageUrl)
     if(pageUrl === '/' || !pageUrl){
-        
         lang = 'zh'
         pageUrl = $(".header-box>.nav-box>.nav-item."+ lang +">a").attr('href')
         console.log(pageUrl.substring(1,pageUrl.length))
@@ -17,7 +12,7 @@ $(function(){
     }else{
         lang = pageUrl.split('/')[1]
     }
-    console.log(lang)
+    // console.log(lang)
     $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").addClass('current').parents('li').addClass('current')
     //头部导航栏切换
     $(".nav-box>.nav-item>a").click(function(){
@@ -26,7 +21,7 @@ $(function(){
 
     //模块路径
     var modulePath = pageUrl.split('/')[2]
-    console.log(modulePath)
+    // 菜单导航设置高亮
     $(".menu-box .menu-uls:not(."+ modulePath +")").remove()
     $(".header-box>.nav-box>.nav-item[data-menu='"+ modulePath +"']").addClass('active')
 
@@ -47,7 +42,7 @@ $(function(){
     $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
     $(".menu-box .menu-uls:not(."+ lang +")").remove()//在同一页面下只显示同一模块下的菜单
 
-
+    //将菜单中的h3表格提取出来，放进子菜单中
     $(".itemHide>h3").each(function(){
         // console.info($(this).text());
         var newA = `<li class="child-li"><a class="child-a" href="#${$(this).text()}">${$(this).text()}</a></li>`
@@ -63,8 +58,8 @@ $(function(){
 	$(".content-box").scroll(function(){
 		$('.markdown-box h3').each(function(){
             if($(this).offset().top < 230){
-                $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").addClass('active')
-                $(this).parents('li.toc').children('a').removeClass('current')
+                $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").addClass('active').parents('.child-li').siblings().find(".child-a").removeClass('active')
+                $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").parents('li.toc').children('a').removeClass('current')
             }
         })
 	})
