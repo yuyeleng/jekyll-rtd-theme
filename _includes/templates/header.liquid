@@ -5,7 +5,8 @@
     <div class="logo-box">
         <img class="logo" src="../../assets/img/logo.png" />
     </div>
-    {%- for workdir in workdir_dirs %}{% include templates/header_menu.liquid %}{% endfor -%}
-    <!-- <ul class="nav-box">
-    </ul> -->
+    
+    <ul class="nav-box">
+        {%- for workdir in workdir_dirs %}{% include templates/header_menu.liquid %}{% endfor -%}
+    </ul>
 </div>

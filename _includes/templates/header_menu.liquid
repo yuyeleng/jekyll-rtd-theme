@@ -14,10 +14,14 @@
     </a>
 {%- endif -%} -->
 {% assign dirUrl = dir.url | split: "/" %}
-<ul class="nav-box {{ dirUrl[1] }}" data-url=" {{ dirUrl[1] }}">
-    <li style="display: none;">{{ dir }}</li>
-    <li class="nav-item" data-href="{{workdir_files[0].url}}">{{dir.title}}</li>
-    {% comment %} list file {% endcomment %}
+{% if dirUrl[1] == 'zh' -%}
+<li class="nav-item">
+    <a href="{{{{workdir_files[0].url}}}}"></a>{{dir.title}}
+</li>
+{% endif -%}
+<!-- <ul class="nav-box {{ dirUrl[1] }}" data-url=" {{ dirUrl[1] }}"> -->
+    
+    {% comment %} list file 
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
@@ -26,19 +30,14 @@
 
         <li style="display: none;" class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
-                <!-- {%- if item.sort -%}
-                    {{ item.sort }}. {{ item.title | default: item.name }}
-                {%- else -%}
-                    {{ item.title | default: item.name }}
-                {%- endif -%} -->
                 {{item.title}}
             </a>
         </li>
     {%- endfor -%}
-
+    {% endcomment %}
     {% comment %} list dirs {% endcomment %}
     
-</ul>
+<!-- </ul> -->
 {%- for workdir in workdir_dirs -%}
         {%- assign level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 2 %}
         <!-- <li class="toc for-li level-{{ level }}"></li> -->
