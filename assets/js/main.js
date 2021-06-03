@@ -27,7 +27,7 @@ $(function(){
     //模块路径
     var modulePath = pageUrl.split('/')[2]
     console.log(modulePath)
-    $(".menu-box .menu-uls:not(."+ modulePath +")").hide()
+    $(".menu-box .menu-uls:not(."+ modulePath +")").remove()
     $(".header-box>.nav-box>.nav-item[data-menu='"+ modulePath +"']").addClass('active')
 
 
@@ -46,4 +46,11 @@ $(function(){
     //隐藏非当前语言下的导航栏和目录
     $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
     $(".menu-box .menu-uls:not(."+ lang +")").remove()//在同一页面下只显示同一模块下的菜单
+
+
+    $(".itemHide>h3").each(function(){
+        console.info($(this).text());
+        var newA = `<a href="#${$(this).text()}">${$(this).text()}</a>`
+        $(this).parent('.itemHide').siblings('.child-ul').html(newA)
+    });
 })
