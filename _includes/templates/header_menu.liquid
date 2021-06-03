@@ -6,7 +6,7 @@
 {% assign dirUrl = dir.url | split: "/" %}
 {% if dirUrl[1] == 'zh' -%}
 <li class="nav-item">
-    {% if workdir_files[0].url != '' -%}
+    {% if workdir_files[0].url -%}
     <a href="{{workdir_files[0].url}}">{{dir.title}}</a>
     {% endif -%}
 </li>
