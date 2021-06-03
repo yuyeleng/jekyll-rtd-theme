@@ -5,6 +5,7 @@ $(function(){
     var locaHref = location.href
     var locaOrigin = location.origin
     var pageUrl = locaHref.replace(locaOrigin, '')
+    console.log(pageUrl)
     $(".header-box>.nav-box>.nav-item>a[href='"+ pageUrl +"']").parents('.nav-item').addClass('active').siblings().removeClass('active')
     //头部导航栏切换
     $(".nav-box>.nav-item>a").click(function(){
@@ -14,7 +15,7 @@ $(function(){
     //模块路径
     var modulePath = $(".header-box>.nav-box>.nav-item:nth-of-type(1)>a").attr('href').split('/')[2]
     console.log(modulePath)
-    //$(".menu-box .menu-uls:not(."+ modulePath +")").remove()//在同一页面下只显示同一模块下的菜单
+    $(".menu-box .menu-uls:not(."+ modulePath +")").remove()//在同一页面下只显示同一模块下的菜单
 
 
     //设置语言
