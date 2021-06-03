@@ -13,7 +13,7 @@ $(function(){
     })
 
     //模块路径
-    var modulePath = $(".header-box>.nav-box>.nav-item:nth-of-type(1)>a").attr('href').split('/')[2]
+    var modulePath = pageUrl.split('/')[2]
     console.log(modulePath)
     $(".menu-box .menu-uls:not(."+ modulePath +")").remove()//在同一页面下只显示同一模块下的菜单
 
