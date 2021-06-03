@@ -100,10 +100,22 @@
 .toc.level-2.current>a{
 	padding-left: 20px;
 }
-.child-ul{
+.toctree>.menu-uls>.toc.current>.child-ul{
+	display: block;
+}
+.toctree>.menu-uls>.toc>.child-ul{
 	background: #141418;
+	display: none;
 }
 .child-ul li a.active{
 	background: #C8AF88;
 	color: #fff !important;
+	width: 100%;
+    display: inline-block;
+}
+.toctree>ul .toc.current>.child-ul li a:hover{
+	background: none;
+}
+.toctree>ul.menu-uls>.toc.current{
+	background: #22262F;
 }

@@ -50,10 +50,12 @@ $(function(){
 
     $(".itemHide>h3").each(function(){
         console.info($(this).text());
-        var newA = `<li class="toc child-li"><a class="child-a" href="#${$(this).text()}">${$(this).text()}</a></li>`
+        var newA = `<li class="child-li"><a class="child-a" href="#${$(this).text()}">${$(this).text()}</a></li>`
         $(this).parent('.itemHide').siblings('.child-ul').append(newA)
     });
+    $(".itemHide").remove()
     $(".menu-box .child-ul").on('click', '.child-a', function(){
+        $(this).parents('li.toc').children('a').removeClass('current')
         $(this).addClass('active').parents('.child-li').siblings().find(".child-a").removeClass('active')
     })
 
