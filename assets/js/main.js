@@ -17,7 +17,7 @@ $(function(){
     var modulePath = pageUrl.split('/')[2]
     console.log(modulePath)
     $(".menu-box .menu-uls:not(."+ modulePath +")").hide()
-    $(".header-box>.nav-box>.nav-item[data-menu='"+ modulePath +"']").addClass('active').siblings().removeClass('active')
+    $(".header-box>.nav-box>.nav-item[data-menu='"+ modulePath +"']").addClass('active')
 
 
     //设置语言
