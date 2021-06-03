@@ -16,7 +16,7 @@
 {% assign dirUrl = dir.url | split: "/" %}
 {% if dirUrl[1] == 'zh' -%}
 <li class="nav-item">
-    <a href="{{{{workdir_files[0].url}}}}"></a>{{dir.title}}
+    <a href="{{workdir_files[0].url}}">{{dir.title}}</a>
 </li>
 {% endif -%}
 <!-- <ul class="nav-box {{ dirUrl[1] }}" data-url=" {{ dirUrl[1] }}"> -->
