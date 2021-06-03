@@ -101,20 +101,26 @@
 	padding-left: 20px;
 }
 .toctree>.menu-uls>.toc.current>.child-ul{
-	display: block;
+	display: block !important;
 }
 .toctree>.menu-uls>.toc>.child-ul{
 	background: #141418;
-	display: none;
+	display: none !important;
+}
+.child-ul li a{
+	width: 100%;
+    display: inline-block;
 }
 .child-ul li a.active{
 	background: #C8AF88;
 	color: #fff !important;
-	width: 100%;
-    display: inline-block;
 }
 .toctree>ul .toc.current>.child-ul li a:hover{
 	background: none;
+}
+.toctree>ul .toc.current>.child-ul li a.active:hover{
+	background: #C8AF88;
+	color: #fff !important;
 }
 .toctree>ul.menu-uls>.toc.current{
 	background: #22262F;
