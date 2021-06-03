@@ -15,7 +15,6 @@ $(function(){
     //模块路径
     var modulePath = pageUrl.split('/')[2]
     console.log(modulePath)
-    $(".menu-box .menu-uls:not(."+ modulePath +")").remove()//在同一页面下只显示同一模块下的菜单
 
 
     //设置语言
@@ -35,5 +34,5 @@ $(function(){
     })
     //隐藏非当前语言下的导航栏和目录
     $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
-    $(".menu-box .menu-uls:not(."+ lang +")").remove()
+    $(".menu-box .menu-uls:not(."+ lang +' '+ modulePath +")").remove()//在同一页面下只显示同一模块下的菜单
 })
