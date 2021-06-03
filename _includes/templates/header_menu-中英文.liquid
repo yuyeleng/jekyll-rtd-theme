@@ -35,12 +35,4 @@
             </a>
         </li>
     {%- endfor -%}
-
-    {% comment %} list dirs {% endcomment %}
-    
 </ul>
-{%- for workdir in workdir_dirs -%}
-        {%- assign level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 2 %}
-        <!-- <li class="toc for-li level-{{ level }}"></li> -->
-        {% include templates/header_menu.liquid %}
-    {%- endfor -%}
