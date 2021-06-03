@@ -2,7 +2,7 @@
 
 {% comment %} display the directory name {% endcomment %}
 {%- assign dir = site_pages | where: "url", workdir | first -%}
-<span style="display: none;">{{ workdir_level }}</span>
+<span style="display: none;">{{ workdir_files }}</span>
 <span style="display: none;">{{ dir }}</span>
 
 
