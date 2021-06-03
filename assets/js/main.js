@@ -5,7 +5,13 @@ $(function(){
     var locaHref = location.href
     var locaOrigin = location.origin
     var pageUrl = locaHref.replace(locaOrigin, '')
+    var lang = pageUrl.split('/')[1]
+    console.log(lang)
     console.log(pageUrl)
+    if(!pageUrl){
+        lang = 'zh'
+        pageUrl = $(".header-box>.nav-box>.nav-item."+ lang +">a").attr('href')
+    }
     
     $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").addClass('current').parents('li').addClass('current')
     //头部导航栏切换
@@ -21,7 +27,6 @@ $(function(){
 
 
     //设置语言
-    var lang = pageUrl.split('/')[1]
     
     var langStr = '中文'
     var newLang = 'zh'
