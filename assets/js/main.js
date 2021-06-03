@@ -11,14 +11,21 @@ $(function(){
         $(this).parent('.nav-item').addClass('active').siblings().removeClass('active')
     })
 
+    //模块路径
+    var modulePath = pageUrl.split('/')[2]
+    $(".menu-box .menu-uls:not(."+ modulePath +")").remove()//在同一页面下只显示同一模块下的菜单
+
 
     //设置语言
     var lang = pageUrl.split('/')[1]
+    
     var langStr = '中文'
     var newLang = 'zh'
     if(lang === 'zh'){
         langStr = 'English'
         newLang = 'en'
+    }else{
+        lang = 'zh'
     }
     $(".lang-box>.lang").text(langStr)
     $(".lang-box>.lang").click(function(){
@@ -26,7 +33,5 @@ $(function(){
     })
     //隐藏非当前语言下的导航栏和目录
     $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
-    // $(".header-box>.nav-box>.nav-item."+ lang +"").show()
     $(".menu-box .menu-uls:not(."+ lang +")").remove()
-    // $(".menu-box .menu-uls."+ lang +"").show()
 })
