@@ -25,8 +25,8 @@ $(function(){
         window.location.href = locaHref.replace(lang, newLang)
     })
     //隐藏非当前语言下的导航栏和目录
-    $(".header-box>.nav-box>.nav-item").hide()
-    $(".header-box>.nav-box>.nav-item."+ lang +"").show()
-    $(".menu-box .menu-uls").hide()
-    $(".menu-box .menu-uls."+ lang +"").show()
+    $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
+    // $(".header-box>.nav-box>.nav-item."+ lang +"").show()
+    $(".menu-box .menu-uls:not(."+ lang +")").remove()
+    // $(".menu-box .menu-uls."+ lang +"").show()
 })
