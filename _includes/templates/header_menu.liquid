@@ -4,11 +4,9 @@
 {%- assign dir = site_pages | where: "url", workdir | first -%}
 
 {% assign dirUrl = dir.url | split: "/" %}
-{% if dirUrl[1] == 'zh' -%}
+{% if dirUrl[1] == 'zh' and workdir_files[0].url -%}
 <li class="nav-item">
-    {% if workdir_files[0].url -%}
     <a href="{{workdir_files[0].url}}">{{dir.title}}</a>
-    {% endif -%}
 </li>
 {% endif -%}
 {%- for workdir in workdir_dirs -%}
