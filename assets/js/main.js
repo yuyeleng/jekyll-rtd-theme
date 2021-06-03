@@ -3,8 +3,8 @@ $(function(){
     console.log(itemH3)
 
     var locaHref = location.href
-    var locaOrigin = location.origin
-    var pageUrl = locaHref.replace(locaOrigin, '')
+    // var locaOrigin = location.origin
+    var pageUrl = location.pathname
     var lang = ""
     
     console.log(pageUrl)
