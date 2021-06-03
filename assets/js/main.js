@@ -7,7 +7,7 @@ $(function(){
     var pageUrl = locaHref.replace(locaOrigin, '')
     console.log(pageUrl)
     
-    $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").addClass('current').parents('li').addClass('current').siblings().removeClass('active').find('a').removeClass('current')
+    $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").addClass('current').parents('li').addClass('current')
     //头部导航栏切换
     $(".nav-box>.nav-item>a").click(function(){
         $(this).parent('.nav-item').addClass('active').siblings().removeClass('active')
@@ -28,8 +28,6 @@ $(function(){
     if(lang === 'zh'){
         langStr = 'English'
         newLang = 'en'
-    }else{
-        lang = 'zh'
     }
     $(".lang-box>.lang").text(langStr)
     $(".lang-box>.lang").click(function(){
