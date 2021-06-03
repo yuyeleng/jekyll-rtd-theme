@@ -94,3 +94,6 @@
 	border-top: none;
 	border-bottom: none;
 }
+.toc.level-2.current>a{
+	padding-left: 20px;
+}

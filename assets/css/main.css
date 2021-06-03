@@ -93,11 +93,16 @@ html,body,.main-box{
 	width: 100%;
 	text-align: center;
 	cursor: pointer;
-	color: #9B7967;
+	color: #C8AF88 ;
 	border-radius: 3px;
-	border: 1px solid #9B7967;
+	border: 1px solid #C8AF88;
 	padding: 3px 5px;
 	display: inline-block;
-	
+	padding-top: 5px;
 	font-size: 14px;
+}
+.lang:hover
+{
+	color: #9B7967 ;
+	border: 1px solid #9B7967;
 }
