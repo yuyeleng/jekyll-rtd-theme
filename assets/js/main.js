@@ -6,7 +6,8 @@ $(function(){
     var locaOrigin = location.origin
     var pageUrl = locaHref.replace(locaOrigin, '')
     console.log(pageUrl)
-    $(".header-box>.nav-box>.nav-item>a[href='"+ pageUrl +"']").parents('.nav-item').addClass('active').siblings().removeClass('active')
+    
+    $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").addClass('current').parents('li').addClass('current').siblings().removeClass('active').find('a').removeClass('current')
     //头部导航栏切换
     $(".nav-box>.nav-item>a").click(function(){
         $(this).parent('.nav-item').addClass('active').siblings().removeClass('active')
@@ -16,6 +17,7 @@ $(function(){
     var modulePath = pageUrl.split('/')[2]
     console.log(modulePath)
     $(".menu-box .menu-uls:not(."+ modulePath +")").hide()
+    $(".header-box>.nav-box>.nav-item>a[data-menu='"+ modulePath +"']").parents('.nav-item').addClass('active').siblings().removeClass('active')
 
 
     //设置语言
