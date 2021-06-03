@@ -59,4 +59,14 @@ $(function(){
         $(this).addClass('active').parents('.child-li').siblings().find(".child-a").removeClass('active')
     })
 
+    //实现滚动条下滑左侧菜单高亮
+    var top2 = $(".pro-item").offset().top;
+	$(window).scroll(function(){
+		$('.markdown-box h3').each(function(){
+            if($(this).offset().top < 230){
+                console.log($(this))
+                $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").addClass('active').parents('.child-li').siblings().find(".child-a").removeClass('active')
+            }
+        })
+	})
 })
