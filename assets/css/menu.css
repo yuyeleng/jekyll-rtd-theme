@@ -66,6 +66,9 @@
 	color: #FFFFFF !important;
 	padding-left: 20px;
 }
+.menu-box .toctree>ul li a：hover{
+	color: #C8AF88 !important;
+}
 .menu-box .toctree>ul>li.current>a{
 	padding-left: 20px;
 	background: #22262F;
