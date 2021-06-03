@@ -14,8 +14,7 @@
     </a>
 {%- endif -%} -->
 {% assign dirUrl = dir.url | split: "/" %}
-{% if dirUrl[1] == 'zh' -%}
-<ul class="menu-uls">
+<ul class="menu-uls {{ dirUrl[1] }}">
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
@@ -44,4 +43,3 @@
         {% include templates/_toctree.liquid %}
     {%- endfor -%}
 </ul>
-{%- endif -%}

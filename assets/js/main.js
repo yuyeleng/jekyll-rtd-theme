@@ -22,6 +22,9 @@ $(function(){
     }
     $(".lang-box>.lang").text(langStr)
     $(".lang-box>.lang").click(function(){
-        location.href = locaHref.replace(lang, newLang)
+        windwow.location.href = locaHref.replace(lang, newLang)
     })
+    //隐藏非当前语言下的导航栏和目录
+    $(".header-box>.nav-box>.nav-item."+ lang +"").show().siblings().hide()
+    $(".menu-box>.menu-uls."+ lang +"").show().siblings().hide()
 })
