@@ -60,11 +60,11 @@ $(function(){
     })
 
     //实现滚动条下滑左侧菜单高亮
-	$(window).scroll(function(){
+	$(".content-box").scroll(function(){
 		$('.markdown-box h3').each(function(){
             if($(this).offset().top < 230){
-                console.log($(this))
-                $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").addClass('active').parents('.child-li').siblings().find(".child-a").removeClass('active')
+                $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").addClass('active')
+                $(this).parents('li.toc').children('a').removeClass('current')
             }
         })
 	})
