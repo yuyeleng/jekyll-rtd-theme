@@ -28,22 +28,8 @@
 .sidebar-wrap .header .logo-box{
 	width: 100%;
 }
-.menu-box .search{
-	padding: 10px 20px;
-}
-.menu-box .search .input-block{
-	background: none;
-	box-shadow: none;
-	color: #9B7967;
-	border: 1px solid #CCCCCC;
-	border-radius: 4px;
-	height: 36px;
-	font-size: 14px;
-}
-.menu-box .search .input-block::-webkit-input-placeholder{
-  color: #9B7967;
-  font-size: 14px;
-}
+
+
 .menu-box .toctree>.caption{
 	color: #FFFFFF;
 	font-size: 18px;
@@ -124,4 +110,30 @@
 }
 .toctree>ul.menu-uls>.toc.current{
 	background: #22262F;
+}
+.form-search{
+	border: 1px solid #CCCCCC;
+    border-radius: 4px;
+	display: flex;
+	align-items: center;
+	height: 36px;
+	width: 100%;
+	margin: 10px 20px;
+}
+.search-img{
+	width: 16px;
+	margin-left: 15px;
+	margin-right: 8px;
+}
+.menu-box .search .input-block{
+	background: none;
+	box-shadow: none;
+	color: #9B7967;
+	border: none;
+	height: 36px;
+	font-size: 14px;
+}
+.menu-box .search .input-block::-webkit-input-placeholder{
+  color: #9B7967;
+  font-size: 14px;
 }

@@ -12,8 +12,9 @@
             
         </div> -->
         <div class="menu-box">
-        	<form class="search" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
-            <input class="form-control input-block input-sm" type="text" name="q" placeholder="{{ __.search_docs | default: 'Search' }}">
+        	<form class="search form-search" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
+                <img src="../../assets/img/search.png" class="search-img" />
+                <input class="form-control input-block input-sm" type="text" name="q" placeholder="搜索">
           </form>
           <div class="toctree" data-spy="affix" role="navigation" aria-label="main navigation">
             {% include templates/toctree.liquid %}
