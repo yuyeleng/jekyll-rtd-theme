@@ -16,7 +16,7 @@
 {% assign dirUrl = dir.url | split: "/" %}
 <ul class="nav-box {{ dirUrl[1] }}" data-url=" {{ dirUrl[1] }}">
     <li style="display: none;">{{ dir }}</li>
-    <li class="nav-item">{{dir.title}}</li>
+    <li class="nav-item" data-href="{{workdir_files[0].url}}">{{dir.title}}</li>
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
