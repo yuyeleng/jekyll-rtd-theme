@@ -15,6 +15,7 @@
 {%- endif -%} -->
 {% assign dirUrl = dir.url %}
 <ul class="nav-box {{ dirUrl[1] }}" data-url=" {{ dirUrl[1] }}">
+    <li style="display: none;">{{ dir }}</li>
     <li class="nav-item">{{dir.title}}</li>
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
@@ -23,7 +24,7 @@
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
 
-        <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+        <li style="display: none;" class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                 <!-- {%- if item.sort -%}
                     {{ item.sort }}. {{ item.title | default: item.name }}
