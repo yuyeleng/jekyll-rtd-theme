@@ -49,7 +49,7 @@ $(function(){
 
 
     $(".itemHide>h3").each(function(){
-        console.info($(this).text());
+        // console.info($(this).text());
         var newA = `<li class="child-li"><a class="child-a" href="#${$(this).text()}">${$(this).text()}</a></li>`
         $(this).parent('.itemHide').siblings('.child-ul').append(newA)
     });
@@ -60,7 +60,6 @@ $(function(){
     })
 
     //实现滚动条下滑左侧菜单高亮
-    var top2 = $(".pro-item").offset().top;
 	$(window).scroll(function(){
 		$('.markdown-box h3').each(function(){
             if($(this).offset().top < 230){
