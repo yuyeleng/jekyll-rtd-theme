@@ -29,13 +29,14 @@ $(function(){
     console.log(pageUrl.split(lang)[1])
     //模块路径
     var modulePath = pageUrl.split(lang)[1].split('/')[1]
+    console.log('0')
     // 菜单导航设置高亮
     $(".menu-box .menu-uls:not(."+ modulePath +")").remove()
     $(".header-box>.nav-box>.nav-item[data-menu='"+ modulePath +"']").addClass('active')
 
 
     //设置语言
-    
+    console.log('1')
     var langStr = '中文'
     var newLang = 'zh'
     var searchVal = ""
@@ -51,10 +52,12 @@ $(function(){
             searchTipsAfter: ` " does not result`,
         }
     }
+    console.log('3')
     if(lang === 'zh'){
         langStr = 'English'
         newLang = 'en'
     }
+    console.log('1')
     $(".input-block").attr('placeholder', langObj[lang].search)
     $(".lang-box>.lang").text(langStr)
     $(".lang-box>.lang").click(function(){
