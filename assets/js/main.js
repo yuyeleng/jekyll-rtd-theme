@@ -33,12 +33,12 @@ $(function(){
     var langObj = {
         zh: {
             search: '搜索',
-            searchTips: `你搜索的“ ${langObj.zh.searchVal} ”未有查询结果`,
+            searchTips: `你搜索的“ ${this.zh.searchVal} ”未有查询结果`,
             searchVal: "",
         },
         en: {
             search: 'Search',
-            searchTips: `Your search for "${langObj.zh.searchVal}" does not result`,
+            searchTips: `Your search for "${this.en.searchVal}" does not result`,
             searchVal: "",
         }
     }
