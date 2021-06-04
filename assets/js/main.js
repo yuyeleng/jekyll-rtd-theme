@@ -65,5 +65,5 @@ $(function(){
 	})
 
     //修改form标签的action值为当前链接
-    $(".menu-box>.search").attr('action', pageUrl);
+    // $(".menu-box>.search").attr('action', pageUrl);
 })
