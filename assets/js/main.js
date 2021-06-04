@@ -30,16 +30,14 @@ $(function(){
     
     var langStr = '中文'
     var newLang = 'zh'
-    var searchVal = "",
+    var searchVal = ""
     var langObj = {
         zh: {
             search: '搜索',
-            searchVal: "",
             searchTips: `你搜索的“ ${searchVal} ”未有查询结果`,
         },
         en: {
             search: 'Search',
-            searchVal: "",
             searchTips: `Your search for "${searchVal}" does not result`,
         }
     }
