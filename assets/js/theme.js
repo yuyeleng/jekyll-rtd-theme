@@ -1,4 +1,5 @@
 function search(data) {
+  console.log('456')
   let text = new URL(location.href).searchParams.get("q");
   let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
 
