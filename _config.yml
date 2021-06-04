@@ -1,6 +1,6 @@
 repository: yuyeleng/yuye.github.io  #自己的仓库地址
 github_url: https://github.com/yuyeleng #自己的github地址
-url: https://www.yuye.github.io #上面设置的https://YourGithubUserName.github.io
+url: https://yuye.github.io #上面设置的https://YourGithubUserName.github.io
 
 title: jekyll-rtd-theme
 description: Just another documentation theme compatible with GitHub Pages
