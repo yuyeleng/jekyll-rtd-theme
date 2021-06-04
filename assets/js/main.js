@@ -64,12 +64,44 @@ $(function(){
         })
 	})
 
+    let searchVal = ''
+    let searchTips = `你搜索的“ ${searchVal} ”未有查询结果`
     //修改form标签的action值为当前链接
     // $(".menu-box>.search").attr('action', pageUrl);
     $(".menu-box .input-block").keyup(function(){
         let val = $(this).val()
+        if(val.length < 1){
+            $(".search-val-box").hide()
+            return false
+        }
         $.ajax(`${ui.baseurl}/data.json`)
-        .done((res) => search(res, val))
+        .done((res) => {
+            if(res.length < 1){
+                let liText = `<li style="color: #fff;text-align: center;height: 40px;
+                line-height: 40px;">${searchTips}</li>`
+                $(".search-val-box").html(liText)
+            }
+            search(res, val)
+        })
+        .fail((xhr, message) => debug(message));
+    })
+    
+    
+    $(".menu-box .input-block").blur(function(){
+        let val = $(this).val()
+        if(val.length < 1){
+            $(".search-val-box").hide()
+            return false
+        }
+        $.ajax(`${ui.baseurl}/data.json`)
+        .done((res) => {
+            if(res.length < 1){
+                let liText = `<li style="color: #fff;text-align: center;height: 40px;
+                line-height: 40px;">${searchTips}</li>`
+                $(".search-val-box").html(liText)
+            }
+            search(res, val)
+        })
         .fail((xhr, message) => debug(message));
     })
     
