@@ -34,11 +34,13 @@ $(function(){
     var langObj = {
         zh: {
             search: '搜索',
-            searchTips: `你搜索的“ ${searchVal} ”未有查询结果`,
+            searchTipsBefor: `你搜索的“`,
+            searchTipsAfter: `”未有查询结果`,
         },
         en: {
             search: 'Search',
-            searchTips: `Your search for "${searchVal}" does not result`,
+            searchTipsBefor: `Your search for`,
+            searchTipsAfter: `" does not result`,
         }
     }
     if(lang === 'zh'){
@@ -224,7 +226,7 @@ $(function(){
           );
         } else {
             let liText = `<li style="color: #fff;text-align: center;height: 40px;
-            line-height: 40px;">${langObj[lang].searchTips}</li>`
+            line-height: 40px;">${langObj[lang].searchTipsBefor + searchVal + langObj[lang].searchTipsAfter}</li>`
             $(".search-val-box").html(liText).show()
         //   $(".search-results .content").empty();
         //   $(".search-results .summary").html(ui.i18n.search_results_not_found);
