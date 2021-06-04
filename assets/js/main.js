@@ -30,16 +30,17 @@ $(function(){
     
     var langStr = '中文'
     var newLang = 'zh'
+    var searchVal = "",
     var langObj = {
         zh: {
             search: '搜索',
             searchVal: "",
-            searchTips: `你搜索的“ ${this.zh.searchVal} ”未有查询结果`,
+            searchTips: `你搜索的“ ${searchVal} ”未有查询结果`,
         },
         en: {
             search: 'Search',
             searchVal: "",
-            searchTips: `Your search for "${this.en.searchVal}" does not result`,
+            searchTips: `Your search for "${searchVal}" does not result`,
         }
     }
     if(lang === 'zh'){
@@ -129,7 +130,7 @@ $(function(){
     
     //搜索事件
     function search(data,text) {
-        langObj[lang].searchVal = text
+        searchVal = text
         // console.log(data)
         // let text = new URL(location.href).searchParams.get("q");
         // let lang = new URL(location.href).searchParams.get("lang");
