@@ -144,8 +144,8 @@ $(function(){
         // let text = new URL(location.href).searchParams.get("q");
         // let lang = new URL(location.href).searchParams.get("lang");
       
-        // console.log(text)
-        // console.log(lang)
+        console.log(text)
+        console.log(lang)
       
         // $("input[name='q']").val(text);
       
