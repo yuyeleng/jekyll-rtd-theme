@@ -1,7 +1,17 @@
 $(function(){
     var locaHref = location.href
     var pageUrl = location.pathname
+    var jsSrc =(navigator.language || navigator.browserLanguage).toLowerCase();
     var lang = "en"
+    console.log(jsSrc)
+    if(jsSrc.indexOf('zh')>=0) {
+        lang = 'zh'
+    } else if(jsSrc.indexOf('en')>=0) {
+        lang = 'en'
+    } else {
+    // 假如浏览器语言是其它语言
+    }
+    
     
     // console.log(pageUrl)
     if(pageUrl === '/' || !pageUrl){
@@ -34,13 +44,13 @@ $(function(){
     var langObj = {
         zh: {
             search: '搜索',
-            searchTipsBefor: `你搜索的“`,
+            searchTipsBefore: `你搜索的“`,
             searchTipsAfter: `”未有查询结果`,
         },
         en: {
             search: 'Search',
-            searchTipsBefor: `Your search for`,
-            searchTipsAfter: `" does not result`,
+            searchTipsBefore: `Your search for" `,
+            searchTipsAfter: ` " does not result`,
         }
     }
     if(lang === 'zh'){
@@ -89,7 +99,7 @@ $(function(){
         }
         $.ajax(`${ui.baseurl}/data.json`)
         .done((res) => {
-            console.log(res)
+            // console.log(res)
             search(res, val)
             // if(res.length < 1){
             //     let liText = `<li style="color: #fff;text-align: center;height: 40px;
@@ -216,7 +226,7 @@ $(function(){
           }
         }
         if (results.length > 0 && text.length > 0) {
-          console.log(results.join(""))
+        //   console.log(results.join(""))
           // $(".search-results .content").html(results.join(""));
       
           $(".menu-content-box .search-val-box").html(results.join(""))
@@ -226,7 +236,7 @@ $(function(){
           );
         } else {
             let liText = `<li style="color: #fff;text-align: center;height: 40px;
-            line-height: 40px;">${langObj[lang].searchTipsBefor + searchVal + langObj[lang].searchTipsAfter}</li>`
+            line-height: 40px;">${langObj[lang].searchTipsBefore + searchVal + langObj[lang].searchTipsAfter}</li>`
             $(".search-val-box").html(liText).show()
         //   $(".search-results .content").empty();
         //   $(".search-results .summary").html(ui.i18n.search_results_not_found);
