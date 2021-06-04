@@ -84,12 +84,12 @@ function search(data) {
     // $(".search-results .content").html(results.join(""));
 
     $(".menu-content-box .search-val-box").html(results.join(""))
-    $(".menu-content-box").show();
+    $(".search-val-box").show();
     $(".search-results .summary").html(
       ui.i18n.search_results_found.replace("#", results.length)
     );
   } else {
-    $(".menu-content-box").hide();
+    $(".search-val-box").hide();
     $(".search-results .content").empty();
     $(".search-results .summary").html(ui.i18n.search_results_not_found);
   }
