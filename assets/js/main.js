@@ -77,15 +77,16 @@ $(function(){
         $.ajax(`${ui.baseurl}/data.json`)
         .done((res) => {
             console.log(res)
-            if(res.length < 1){
-                let liText = `<li style="color: #fff;text-align: center;height: 40px;
-                line-height: 40px;">${searchTips}</li>`
-                console.log(liText)
-                $(".search-val-box").html(liText).show()
-                return false;
-            }else{
-                search(res, val)
-            }
+            search(res, val)
+            // if(res.length < 1){
+            //     let liText = `<li style="color: #fff;text-align: center;height: 40px;
+            //     line-height: 40px;">${searchTips}</li>`
+            //     console.log(liText)
+            //     $(".search-val-box").html(liText).show()
+            //     return false;
+            // }else{
+            //     search(res, val)
+            // }
             
         })
         .fail((xhr, message) => debug(message));
@@ -100,14 +101,15 @@ $(function(){
         }
         $.ajax(`${ui.baseurl}/data.json`)
         .done((res) => {
-            if(res.length < 1){
-                let liText = `<li style="color: #fff;text-align: center;height: 40px;
-                line-height: 40px;">${searchTips}</li>`
-                $(".search-val-box").html(liText).show()
-                return false;
-            }else{
-                search(res, val)
-            }
+            search(res, val)
+            // if(res.length < 1){
+            //     let liText = `<li style="color: #fff;text-align: center;height: 40px;
+            //     line-height: 40px;">${searchTips}</li>`
+            //     $(".search-val-box").html(liText).show()
+            //     return false;
+            // }else{
+                
+            // }
             
         })
         .fail((xhr, message) => debug(message));
@@ -209,9 +211,11 @@ $(function(){
             ui.i18n.search_results_found.replace("#", results.length)
           );
         } else {
-          $(".search-val-box").hide();
-          $(".search-results .content").empty();
-          $(".search-results .summary").html(ui.i18n.search_results_not_found);
+            let liText = `<li style="color: #fff;text-align: center;height: 40px;
+            line-height: 40px;">${searchTips}</li>`
+            $(".search-val-box").html(liText).show()
+        //   $(".search-results .content").empty();
+        //   $(".search-results .summary").html(ui.i18n.search_results_not_found);
         }
         $(".search-results h2").html(ui.i18n.search_results);
       }
