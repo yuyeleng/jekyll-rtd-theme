@@ -71,6 +71,7 @@ function search(data) {
     }
   }
   if (results.length > 0 && text.length > 0) {
+    console.log(results.join(""))
     $(".search-results .content").html(results.join(""));
     $(".search-results .summary").html(
       ui.i18n.search_results_found.replace("#", results.length)
