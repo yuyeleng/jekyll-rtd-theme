@@ -28,12 +28,24 @@ $(function(){
 
     //设置语言
     
-    var langStr = '中文'
-    var newLang = 'zh'
-    if(lang === 'zh'){
-        langStr = 'English'
-        newLang = 'en'
+    var langStr = 'English'
+    var newLang = 'en'
+    var searchVal = ''
+    var langObj = {
+        zh: {
+            search: '中文',
+            searchTips: `你搜索的“ ${searchVal} ”未有查询结果`
+        },
+        en: {
+            search: 'Search',
+            searchTips: `Your search for "${searchVal}" does not result`
+        }
     }
+    if(lang === 'en'){
+        langStr = '中文'
+        newLang = 'zh'
+    }
+    $(".input-block").attr('placeholder', langObj[lang].search)
     $(".lang-box>.lang").text(langStr)
     $(".lang-box>.lang").click(function(){
         window.location.href = locaHref.replace(lang, newLang)
@@ -64,8 +76,7 @@ $(function(){
         })
 	})
 
-    let searchVal = ''
-    let searchTips = `你搜索的“ ${searchVal} ”未有查询结果`
+    
     //修改form标签的action值为当前链接
     // $(".menu-box>.search").attr('action', pageUrl);
     $(".menu-box .input-block").keyup(function(){
@@ -117,12 +128,13 @@ $(function(){
     
     //搜索事件
     function search(data,text) {
+        searchVal = text
         // console.log(data)
         // let text = new URL(location.href).searchParams.get("q");
         // let lang = new URL(location.href).searchParams.get("lang");
       
-        console.log(text)
-        console.log(lang)
+        // console.log(text)
+        // console.log(lang)
       
         $("input[name='q']").val(text);
       
@@ -212,7 +224,7 @@ $(function(){
           );
         } else {
             let liText = `<li style="color: #fff;text-align: center;height: 40px;
-            line-height: 40px;">${searchTips}</li>`
+            line-height: 40px;">${langObj[lang].searchTips}</li>`
             $(".search-val-box").html(liText).show()
         //   $(".search-results .content").empty();
         //   $(".search-results .summary").html(ui.i18n.search_results_not_found);
