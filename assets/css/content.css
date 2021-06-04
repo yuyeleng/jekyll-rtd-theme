@@ -96,6 +96,13 @@
     border-radius: 0;
     background: none;
 }
+.markdown-box .bg-yellow{
+    background: #9B7967;
+    padding: 2px 4px;
+    margin: 3px;
+    border-radius: 4px;
+    
+}
 @media screen and (min-width: 100px) and (max-width: 1000px) {
     .main-box {
         width: 1000px;

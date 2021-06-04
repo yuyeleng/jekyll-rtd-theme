@@ -75,9 +75,9 @@ $(function(){
     
     //搜索事件
     function search(data,text) {
-        console.log(data)
+        // console.log(data)
         // let text = new URL(location.href).searchParams.get("q");
-        let lang = new URL(location.href).searchParams.get("lang");
+        // let lang = new URL(location.href).searchParams.get("lang");
       
         console.log(text)
         console.log(lang)
@@ -105,7 +105,7 @@ $(function(){
             });
         }
         for (page of data) {
-            console.log(page)
+            // console.log(page)
           let [title, content] = [null, null];
           try {
             if (page.title) {
@@ -129,31 +129,34 @@ $(function(){
             debug(e.message);
           }
           if (title || content) {
-            let result = [
-              `<a class="child-a" href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
-            ];
-            if (content) {
-              let [min, max] = [content.index - 100, content.index + 100];
-              let [prefix, suffix] = ["...", "..."];
-      
-              if (min < 0) {
-                prefix = "";
-                min = 0;
+              if(page.dir.split('/')[1] === lang){//只匹配当前语言下的值
+                let result = [
+                    `<a class="child-a" href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
+                  ];
+                  if (content) {
+                    let [min, max] = [content.index - 100, content.index + 100];
+                    let [prefix, suffix] = ["...", "..."];
+            
+                    if (min < 0) {
+                      prefix = "";
+                      min = 0;
+                    }
+                    if (max > page.content.length) {
+                      suffix = "";
+                      max = page.content.length;
+                    }
+                    // result.push(
+                    //   `<p class="text-gray">${prefix}${slice(
+                    //     page.content,
+                    //     min,
+                    //     max
+                    //   )}${suffix}</p>`
+                    // );   //只要标题用来放到左侧菜单中，具体内容暂时舍弃
+                    
+                  }
+                  results.push(`<li class="border-top child-li">${result.join("")}</li>`);
               }
-              if (max > page.content.length) {
-                suffix = "";
-                max = page.content.length;
-              }
-              // result.push(
-              //   `<p class="text-gray">${prefix}${slice(
-              //     page.content,
-              //     min,
-              //     max
-              //   )}${suffix}</p>`
-              // );   //只要标题用来放到左侧菜单中，具体内容暂时舍弃
-              
-            }
-            results.push(`<li class="border-top child-li">${result.join("")}</li>`);
+            
           }
         }
         if (results.length > 0 && text.length > 0) {
@@ -172,4 +175,32 @@ $(function(){
         }
         $(".search-results h2").html(ui.i18n.search_results);
       }
+
+    highlight()
+    function highlight() {//搜索匹配字符高亮
+        let text = new URL(location.href).searchParams.get("highlight");
+        console.log(text)
+        if (text) {
+            $(".markdown-body")
+            .find("*")
+            .each(function () {
+                try {
+                if (this.outerHTML.match(new RegExp(text, "im"))) {
+                    $(this).addClass("search-result");
+                    $(this).parentsUntil(".markdown-body").removeClass("search-result");
+                }
+                } catch (e) {
+                debug(e.message);
+                }
+            });
+            // last node
+            $(".search-result").each(function () {
+            $(this).html(function (i, html) {
+                console.log(text)
+                return html.replace(text, `<span class="bg-yellow">${text}</span>`);
+            });
+            });
+            $(".search input").val(text);
+        }
+    }
 })
