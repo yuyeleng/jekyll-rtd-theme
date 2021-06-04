@@ -27,7 +27,7 @@ $(function(){
     })
 
     //模块路径
-    var modulePath = pageUrl.split('/')[2]
+    var modulePath = pageUrl.split(lang)[1].split('/')[0]
     // 菜单导航设置高亮
     $(".menu-box .menu-uls:not(."+ modulePath +")").remove()
     $(".header-box>.nav-box>.nav-item[data-menu='"+ modulePath +"']").addClass('active')
