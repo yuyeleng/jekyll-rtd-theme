@@ -76,14 +76,17 @@ $(function(){
         }
         $.ajax(`${ui.baseurl}/data.json`)
         .done((res) => {
+            console.log(res)
             if(res.length < 1){
                 let liText = `<li style="color: #fff;text-align: center;height: 40px;
                 line-height: 40px;">${searchTips}</li>`
                 console.log(liText)
                 $(".search-val-box").html(liText).show()
                 return false;
+            }else{
+                search(res, val)
             }
-            search(res, val)
+            
         })
         .fail((xhr, message) => debug(message));
     })
@@ -102,8 +105,10 @@ $(function(){
                 line-height: 40px;">${searchTips}</li>`
                 $(".search-val-box").html(liText).show()
                 return false;
+            }else{
+                search(res, val)
             }
-            search(res, val)
+            
         })
         .fail((xhr, message) => debug(message));
     })
