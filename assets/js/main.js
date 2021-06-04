@@ -232,7 +232,7 @@ $(function(){
             ui.i18n.search_results_found.replace("#", results.length)
           );
         } else {
-            let liText = `<li style="color: #fff;text-align: center;padding="15px 20px;">${langObj[lang].searchTipsBefore + searchVal + langObj[lang].searchTipsAfter}</li>`
+            let liText = `<li style="color: #fff;text-align: center;padding:"15px 20px;">${langObj[lang].searchTipsBefore + searchVal + langObj[lang].searchTipsAfter}</li>`
             $(".search-val-box").html(liText).show()
         //   $(".search-results .content").empty();
         //   $(".search-results .summary").html(ui.i18n.search_results_not_found);
