@@ -1,5 +1,5 @@
 function search(data) {
-  console.log('456')
+  console.log(data)
   let text = new URL(location.href).searchParams.get("q");
   let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
 
@@ -29,6 +29,7 @@ function search(data) {
       });
   }
   for (page of data) {
+    console.log(page)
     let [title, content] = [null, null];
     try {
       if (page.title) {
