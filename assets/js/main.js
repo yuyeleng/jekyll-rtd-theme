@@ -25,7 +25,8 @@ $(function(){
     $(".nav-box>.nav-item>a").click(function(){
         $(this).parent('.nav-item').addClass('active').siblings().removeClass('active')
     })
-
+    console.log(pageUrl)
+    console.log(pageUrl.split(lang)[1])
     //模块路径
     var modulePath = pageUrl.split(lang)[1].split('/')[0]
     // 菜单导航设置高亮
