@@ -76,7 +76,7 @@ function search(data) {
         // );   //只要标题用来放到左侧菜单中，具体内容暂时舍弃
         
       }
-      results.push(`<li class="border-top child-li py-4">${result.join("")}</li>`);
+      results.push(`<li class="border-top child-li">${result.join("")}</li>`);
     }
   }
   if (results.length > 0 && text.length > 0) {
@@ -84,10 +84,12 @@ function search(data) {
     // $(".search-results .content").html(results.join(""));
 
     $(".menu-content-box .search-val-box").html(results.join(""))
+    $(".menu-content-box").show();
     $(".search-results .summary").html(
       ui.i18n.search_results_found.replace("#", results.length)
     );
   } else {
+    $(".menu-content-box").hide();
     $(".search-results .content").empty();
     $(".search-results .summary").html(ui.i18n.search_results_not_found);
   }
