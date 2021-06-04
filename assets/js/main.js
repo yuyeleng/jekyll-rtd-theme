@@ -17,7 +17,10 @@ $(function(){
         // console.log(pageUrl.substring(1,pageUrl.length))
         window.location.href = locaHref + pageUrl.substring(1,pageUrl.length)
     }else{
-        // lang = pageUrl.split('/')[1]
+        // if(pageUrl.indexOf(lang) === -1){
+
+        // }
+        lang = pageUrl.split('/')[1]
     }
     // console.log(lang)
     $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").addClass('current').parents('li').addClass('current')
