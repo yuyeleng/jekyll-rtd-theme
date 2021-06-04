@@ -60,6 +60,7 @@ $(function(){
     $(".lang-box>.lang").click(function(){
         window.location.href = locaHref.replace(lang, newLang)
     })
+    console.log(lang)
     //隐藏非当前语言下的导航栏和目录
     $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
     $(".menu-box .menu-uls:not(."+ lang +")").remove()//在同一页面下只显示同一模块下的菜单
