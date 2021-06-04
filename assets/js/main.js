@@ -8,16 +8,13 @@ $(function(){
         lang = 'zh'
     } else if(jsSrc.indexOf('en')>=0) {
         lang = 'en'
-    } else {
-    // 假如浏览器语言是其它语言
     }
     
     
     // console.log(pageUrl)
-    if(pageUrl === '/' || !pageUrl){
-        lang = 'en'
+    if(pageUrl === '/' || !pageUrl){//设置默认值
         pageUrl = $(".header-box>.nav-box>.nav-item."+ lang +">a").attr('href')
-        console.log(pageUrl.substring(1,pageUrl.length))
+        // console.log(pageUrl.substring(1,pageUrl.length))
         window.location.href = locaHref + pageUrl.substring(1,pageUrl.length)
     }else{
         lang = pageUrl.split('/')[1]

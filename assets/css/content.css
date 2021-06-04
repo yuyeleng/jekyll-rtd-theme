@@ -103,6 +103,9 @@
     border-radius: 4px;
     color: #fff;
 }
+.content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight,.markdown-body .highlight pre, .markdown-body pre{
+    padding: none !important;
+}
 @media screen and (min-width: 100px) and (max-width: 1000px) {
     .main-box {
         width: 1000px;
