@@ -25,11 +25,14 @@
 {%- assign schema_surl = page.url  | absolute_url | xml_escape -%}
 
 {% comment %} debug {% endcomment %}
+{%- assign base = site.baseurl -%}
+{% comment %}
 {%- if site.debug -%}
     {%- assign base = site.baseurl -%}
 {%- else -%}
     {%- assign base = "https://cdn.jsdelivr.net/gh/" | append: theme_alias -%}
 {%- endif -%}
+{% endcomment %}
 
 {% comment %} extra {% endcomment %}
 {%- capture extra_scss -%}

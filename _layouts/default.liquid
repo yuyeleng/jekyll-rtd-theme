@@ -8,18 +8,28 @@ layout: tasks/compress
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ direction }}">
     <head>
+        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+        <link rel="Bookmark" href="/assets/images/favicon.ico">
         {%- include common/metadata.liquid -%}
         {%- include common/title.liquid -%}
         {%- include common/twitter_cards.liquid -%}
         {%- include common/opengraph.liquid -%}
         {%- include common/schema.liquid -%}
-        {%- include common/links.liquid -%}
+        
         {%- include rest/styles.liquid -%}
+
+        {% comment  %}
+        {%- include common/links.liquid -%}
         {%- include common/script.liquid -%}
+        {% endcomment %}
+
         {%- include extra/head.html -%}
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/css/menu.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/css/content.css"/>
+        <script src="/assets/js/jquery.2.1.4.js" type="text/javascript"></script>
+        <script src="/assets/js/theme.js" type="text/javascript"></script>
+        <script src="/assets/js/main.js" type="text/javascript"></script>
     </head>
     <body class="container">
         <div class="main-box">
@@ -39,7 +49,5 @@ layout: tasks/compress
         {%- include common/google_gtag.liquid-%}
         {%- include common/google_adsense.liquid-%}
     </body>
-    <script src="/assets/js/jquery.2.1.4.js" type="text/javascript"></script>
-    <script src="/assets/js/theme.js" type="text/javascript"></script>
-    <script src="/assets/js/main.js" type="text/javascript"></script>
+    
 </html>
