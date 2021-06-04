@@ -13,7 +13,7 @@ html,body,.main-box{
 	width: 100%;
 	height: 80px;
 	background: #22262F;
-	display: flex;
+	/* display: flex; */
 }
 .menu-content-box{
 	height: calc(100% - 80px);
@@ -46,6 +46,7 @@ html,body,.main-box{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	float: left;
 }
 .header-box .logo-box img{
 	width: 100%;
@@ -54,6 +55,9 @@ html,body,.main-box{
 	flex: 1;
 	height: 100%;
 	display: flex;
+	float: left;
+    width: calc(100% - 370px);
+	overflow-x: auto;
 }
 .header-box .nav-box .nav-item{
 	display: flex;
@@ -88,6 +92,8 @@ html,body,.main-box{
 	display: flex;
 	align-items: center;
 	margin-right: 30px;
+	float: right;
+	height: 100%;
 }
 .lang{
 	width: 100%;

@@ -31,7 +31,7 @@ $(function(){
     // console.log(pageUrl)
     // console.log(pageUrl.split(lang)[1])
     //模块路径
-    var modulePath = pageUrl.split('/')[1]
+    var modulePath = pageUrl.split('/')[2]
     // console.log('0')
     // 菜单导航设置高亮
     $(".menu-box .menu-uls:not(."+ modulePath +")").remove()
