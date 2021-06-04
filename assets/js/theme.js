@@ -19,6 +19,7 @@ function search(data) {
   }
 
   function slice(content, min, max) {
+    console.log(match)
     return content
       .slice(min, max)
       .replace(regexp, (match) => `<span class="bg-yellow">${match}</span>`);
@@ -196,6 +197,7 @@ function highlight() {
     // last node
     $(".search-result").each(function () {
       $(this).html(function (i, html) {
+        console.log(text)
         return html.replace(text, `<span class="bg-yellow">${text}</span>`);
       });
     });
