@@ -1,11 +1,11 @@
 $(function(){
     var locaHref = location.href
     var pageUrl = location.pathname
-    var lang = ""
+    var lang = "en"
     
     // console.log(pageUrl)
     if(pageUrl === '/' || !pageUrl){
-        lang = 'zh'
+        lang = 'en'
         pageUrl = $(".header-box>.nav-box>.nav-item."+ lang +">a").attr('href')
         console.log(pageUrl.substring(1,pageUrl.length))
         window.location.href = locaHref + pageUrl.substring(1,pageUrl.length)
@@ -28,22 +28,23 @@ $(function(){
 
     //设置语言
     
-    var langStr = 'English'
-    var newLang = 'en'
-    var searchVal = ''
+    var langStr = '中文'
+    var newLang = 'zh'
     var langObj = {
         zh: {
-            search: '中文',
-            searchTips: `你搜索的“ ${searchVal} ”未有查询结果`
+            search: '搜索',
+            searchTips: `你搜索的“ ${this.searchVal} ”未有查询结果`,
+            searchVal: "",
         },
         en: {
             search: 'Search',
-            searchTips: `Your search for "${searchVal}" does not result`
+            searchTips: `Your search for "${this.searchVal}" does not result`,
+            searchVal: "",
         }
     }
-    if(lang === 'en'){
-        langStr = '中文'
-        newLang = 'zh'
+    if(lang === 'zh'){
+        langStr = 'English'
+        newLang = 'en'
     }
     $(".input-block").attr('placeholder', langObj[lang].search)
     $(".lang-box>.lang").text(langStr)
@@ -128,7 +129,7 @@ $(function(){
     
     //搜索事件
     function search(data,text) {
-        searchVal = text
+        langObj[lang].searchVal = text
         // console.log(data)
         // let text = new URL(location.href).searchParams.get("q");
         // let lang = new URL(location.href).searchParams.get("lang");
@@ -136,7 +137,7 @@ $(function(){
         // console.log(text)
         // console.log(lang)
       
-        $("input[name='q']").val(text);
+        // $("input[name='q']").val(text);
       
         let results = [];
         let regexp = new RegExp();
