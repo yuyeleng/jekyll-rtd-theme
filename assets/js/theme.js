@@ -1,101 +1,101 @@
-function search(data) {
-  console.log(data)
-  let text = new URL(location.href).searchParams.get("q");
-  let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
+// function search(data) {
+//   console.log(data)
+//   let text = new URL(location.href).searchParams.get("q");
+//   let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
 
-  console.log(text)
-  console.log(lang)
+//   console.log(text)
+//   console.log(lang)
 
-  $("input[name='q']").val(text);
+//   $("input[name='q']").val(text);
 
-  let results = [];
-  let regexp = new RegExp();
-  try {
-    regexp = new RegExp(text, "im");
-  } catch (e) {
-    $(".search-results .content").empty();
-    $(".search-results .summary").html(ui.i18n.search_results_not_found);
-    $(".search-results h2").html(ui.i18n.search_results);
-    return debug(e.message);
-  }
+//   let results = [];
+//   let regexp = new RegExp();
+//   try {
+//     regexp = new RegExp(text, "im");
+//   } catch (e) {
+//     $(".search-results .content").empty();
+//     $(".search-results .summary").html(ui.i18n.search_results_not_found);
+//     $(".search-results h2").html(ui.i18n.search_results);
+//     return debug(e.message);
+//   }
 
-  function slice(content, min, max) {
+//   function slice(content, min, max) {
     
-    return content
-      .slice(min, max)
-      .replace(regexp, (match) => {
-        console.log(match)
-        return `<span class="bg-yellow">${match}</span>`
-      });
-  }
-  for (page of data) {
-    console.log(page)
-    let [title, content] = [null, null];
-    try {
-      if (page.title) {
-        title = page.title.match(regexp);
-      } else {
-        if (page.url == "/") {
-          page.title = ui.title;
-        } else {
-          page.title = page.url;
-        }
-      }
-    } catch (e) {
-      debug(e.message);
-    }
-    try {
-      if (page.content) {
-        page.content = $("<div/>").html(page.content).text();
-        content = page.content.match(regexp);
-      }
-    } catch (e) {
-      debug(e.message);
-    }
-    if (title || content) {
-      let result = [
-        `<a class="child-a" href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
-      ];
-      if (content) {
-        let [min, max] = [content.index - 100, content.index + 100];
-        let [prefix, suffix] = ["...", "..."];
+//     return content
+//       .slice(min, max)
+//       .replace(regexp, (match) => {
+//         console.log(match)
+//         return `<span class="bg-yellow">${match}</span>`
+//       });
+//   }
+//   for (page of data) {
+//     console.log(page)
+//     let [title, content] = [null, null];
+//     try {
+//       if (page.title) {
+//         title = page.title.match(regexp);
+//       } else {
+//         if (page.url == "/") {
+//           page.title = ui.title;
+//         } else {
+//           page.title = page.url;
+//         }
+//       }
+//     } catch (e) {
+//       debug(e.message);
+//     }
+//     try {
+//       if (page.content) {
+//         page.content = $("<div/>").html(page.content).text();
+//         content = page.content.match(regexp);
+//       }
+//     } catch (e) {
+//       debug(e.message);
+//     }
+//     if (title || content) {
+//       let result = [
+//         `<a class="child-a" href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
+//       ];
+//       if (content) {
+//         let [min, max] = [content.index - 100, content.index + 100];
+//         let [prefix, suffix] = ["...", "..."];
 
-        if (min < 0) {
-          prefix = "";
-          min = 0;
-        }
-        if (max > page.content.length) {
-          suffix = "";
-          max = page.content.length;
-        }
-        // result.push(
-        //   `<p class="text-gray">${prefix}${slice(
-        //     page.content,
-        //     min,
-        //     max
-        //   )}${suffix}</p>`
-        // );   //只要标题用来放到左侧菜单中，具体内容暂时舍弃
+//         if (min < 0) {
+//           prefix = "";
+//           min = 0;
+//         }
+//         if (max > page.content.length) {
+//           suffix = "";
+//           max = page.content.length;
+//         }
+//         // result.push(
+//         //   `<p class="text-gray">${prefix}${slice(
+//         //     page.content,
+//         //     min,
+//         //     max
+//         //   )}${suffix}</p>`
+//         // );   //只要标题用来放到左侧菜单中，具体内容暂时舍弃
         
-      }
-      results.push(`<li class="border-top child-li">${result.join("")}</li>`);
-    }
-  }
-  if (results.length > 0 && text.length > 0) {
-    console.log(results.join(""))
-    // $(".search-results .content").html(results.join(""));
+//       }
+//       results.push(`<li class="border-top child-li">${result.join("")}</li>`);
+//     }
+//   }
+//   if (results.length > 0 && text.length > 0) {
+//     console.log(results.join(""))
+//     // $(".search-results .content").html(results.join(""));
 
-    $(".menu-content-box .search-val-box").html(results.join(""))
-    $(".search-val-box").show();
-    $(".search-results .summary").html(
-      ui.i18n.search_results_found.replace("#", results.length)
-    );
-  } else {
-    $(".search-val-box").hide();
-    $(".search-results .content").empty();
-    $(".search-results .summary").html(ui.i18n.search_results_not_found);
-  }
-  $(".search-results h2").html(ui.i18n.search_results);
-}
+//     $(".menu-content-box .search-val-box").html(results.join(""))
+//     $(".search-val-box").show();
+//     $(".search-results .summary").html(
+//       ui.i18n.search_results_found.replace("#", results.length)
+//     );
+//   } else {
+//     $(".search-val-box").hide();
+//     $(".search-results .content").empty();
+//     $(".search-results .summary").html(ui.i18n.search_results_not_found);
+//   }
+//   $(".search-results h2").html(ui.i18n.search_results);
+// }
 
 function initialize(name) {
   let link = $(".toctree").find(`[href="${decodeURI(name)}"]`);
