@@ -66,11 +66,17 @@ $(function(){
 
     //修改form标签的action值为当前链接
     // $(".menu-box>.search").attr('action', pageUrl);
-
+    $(".menu-box .input-block").keyup(function(){
+        let val = $(this).val()
+        $.ajax(`${ui.baseurl}/data.json`)
+        .done((res) => search(res, val))
+        .fail((xhr, message) => debug(message));
+    })
+    
     //搜索事件
-    function search(data) {
+    function search(data,text) {
         console.log(data)
-        let text = new URL(location.href).searchParams.get("q");
+        // let text = new URL(location.href).searchParams.get("q");
         let lang = new URL(location.href).searchParams.get("lang");
       
         console.log(text)
