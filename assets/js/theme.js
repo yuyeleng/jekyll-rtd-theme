@@ -2,6 +2,9 @@ function search(data) {
   let text = new URL(location.href).searchParams.get("q");
   let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
 
+  console.log(text)
+  console.log(lang)
+
   $("input[name='q']").val(text);
 
   let results = [];
@@ -176,7 +179,7 @@ function restore() {
 
 function highlight() {
   let text = new URL(location.href).searchParams.get("highlight");
-
+  console.log(text)
   if (text) {
     $(".markdown-body")
       .find("*")
