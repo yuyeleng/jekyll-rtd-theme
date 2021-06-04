@@ -140,3 +140,9 @@
   color: #9B7967;
   font-size: 14px;
 }
+.search-val-box{
+	width: 100%;
+	max-height: 255px;
+	overflow-y: auto;
+	height: 0;
+}

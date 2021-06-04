@@ -53,7 +53,7 @@ function search(data) {
     }
     if (title || content) {
       let result = [
-        `<a href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
+        `<a class="child-a" href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
       ];
       if (content) {
         let [min, max] = [content.index - 100, content.index + 100];
@@ -67,20 +67,23 @@ function search(data) {
           suffix = "";
           max = page.content.length;
         }
-        result.push(
-          `<p class="text-gray">${prefix}${slice(
-            page.content,
-            min,
-            max
-          )}${suffix}</p>`
-        );
+        // result.push(
+        //   `<p class="text-gray">${prefix}${slice(
+        //     page.content,
+        //     min,
+        //     max
+        //   )}${suffix}</p>`
+        // );   //只要标题用来放到左侧菜单中，具体内容暂时舍弃
+        
       }
-      results.push(`<li class="border-top py-4">${result.join("")}</li>`);
+      results.push(`<li class="border-top child-li py-4">${result.join("")}</li>`);
     }
   }
   if (results.length > 0 && text.length > 0) {
     console.log(results.join(""))
-    $(".search-results .content").html(results.join(""));
+    // $(".search-results .content").html(results.join(""));
+
+    $(".menu-content-box .search-val-box").html(results.join(""))
     $(".search-results .summary").html(
       ui.i18n.search_results_found.replace("#", results.length)
     );
