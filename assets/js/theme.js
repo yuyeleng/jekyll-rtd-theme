@@ -20,10 +20,13 @@ function search(data) {
   }
 
   function slice(content, min, max) {
-    console.log(match)
+    
     return content
       .slice(min, max)
-      .replace(regexp, (match) => `<span class="bg-yellow">${match}</span>`);
+      .replace(regexp, (match) => {
+        console.log(match)
+        return `<span class="bg-yellow">${match}</span>`
+      });
   }
   for (page of data) {
     let [title, content] = [null, null];
