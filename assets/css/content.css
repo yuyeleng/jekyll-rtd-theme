@@ -97,7 +97,7 @@
     background: none;
 }
 .markdown-box .bg-yellow{
-    background: #C8AF88;
+    background: #C8AF88 !important;
     padding: 2px 4px;
     margin: 3px;
     border-radius: 4px;

@@ -79,7 +79,8 @@ $(function(){
             if(res.length < 1){
                 let liText = `<li style="color: #fff;text-align: center;height: 40px;
                 line-height: 40px;">${searchTips}</li>`
-                $(".search-val-box").html(liText)
+                $(".search-val-box").html(liText).show()
+                return false;
             }
             search(res, val)
         })
@@ -98,7 +99,8 @@ $(function(){
             if(res.length < 1){
                 let liText = `<li style="color: #fff;text-align: center;height: 40px;
                 line-height: 40px;">${searchTips}</li>`
-                $(".search-val-box").html(liText)
+                $(".search-val-box").html(liText).show()
+                return false;
             }
             search(res, val)
         })
