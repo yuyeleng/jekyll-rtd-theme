@@ -106,16 +106,22 @@
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight,.markdown-body .highlight pre, .markdown-body pre{
     padding: 0px !important;
 }
+.content-wrap.content-box pre.highlight{
+	padding: 20px 0px !important;
+}
+.markdown-body .highlight{
+	margin-bottom: 0;
+}
 @media screen and (min-width: 100px) and (max-width: 1000px) {
     .main-box {
         width: 1000px;
     }
-    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge, .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title{
-        float: none;
+    .content-wrap.content-box .markdown-body>*{
         width: 100%;
     }
-    .content-wrap.content-box .content-box .markdown-body>*{
-        width: 100%;
+    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge, .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title{
+        float: none;
+        width: calc(100% - 56px);
     }
     .content-wrap.content-box .code-bg-box{
         display: none;
