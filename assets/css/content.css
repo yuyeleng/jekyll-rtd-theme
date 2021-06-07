@@ -104,7 +104,7 @@
     color: #fff;
 }
 .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight{
-    padding: 0px !important;
+  padding: 0px;
 }
 .content-wrap.content-box pre.highlight{
 	padding: 20px 0px !important;
