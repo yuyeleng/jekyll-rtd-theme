@@ -103,7 +103,7 @@
     border-radius: 4px;
     color: #fff;
 }
-.content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight,.markdown-body .highlight pre, .markdown-body pre{
+.content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge .highlight{
     padding: 0px !important;
 }
 .content-wrap.content-box pre.highlight{
