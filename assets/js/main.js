@@ -86,7 +86,8 @@ $(function(){
     $(".menu-box .child-ul").on('click', '.child-a', function(){
         $(this).parents('li.toc').children('a').removeClass('current')
         $(this).addClass('current').parents('.child-li').siblings().find(".child-a").removeClass('current')
-    })
+        $(this).parent('.toc').siblings().removeClass('current').find('.child-a').removeClass('current')
+      })
 
     //实现滚动条下滑左侧菜单高亮
 	$(".content-box").scroll(function(){
