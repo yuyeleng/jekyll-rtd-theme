@@ -83,18 +83,18 @@ $(function(){
     $(".menu-box .child-ul").on('click', '.child-a', function(){
         $(this).parents('li.toc').children('a').removeClass('current')
         $(this).addClass('current').parents('.child-li').siblings().find(".child-a").removeClass('current')
-        $(this).parent('.toc').siblings().removeClass('current').find('.child-a').removeClass('current')
+        $(this).parent('.toc').siblings('li').removeClass('current').find('.child-a').removeClass('current')
       })
 
     //实现滚动条下滑左侧菜单高亮
-	$(".content-box").scroll(function(){
-		$('.markdown-box h3').each(function(){
-            if($(this).offset().top < 230){
-                $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").addClass('current').parents('.child-li').siblings().find(".child-a").removeClass('current')
-                $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").parents('li.toc').children('a').removeClass('current')
-            }
-        })
-	})
+    $(".content-box").scroll(function(){
+      $('.markdown-box h3').each(function(){
+        if($(this).offset().top < 230){
+          $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").addClass('current').parents('.child-li').siblings().find(".child-a").removeClass('current')
+          $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").parents('li.toc').children('a').removeClass('current')
+        }
+      })
+    })
 
     
     //修改form标签的action值为当前链接
