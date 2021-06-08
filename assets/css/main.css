@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 }
-ul,li{
+.header-box ul li,.menu-box ul li{
 	list-style: none;
 }
 html,body,.main-box{

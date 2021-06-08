@@ -112,6 +112,17 @@
 .markdown-body .highlight{
 	margin-bottom: 0;
 }
+blockquote{
+    margin-left: 28px;
+    margin-right: 28px;
+    background: #efefef;
+    padding: 10px 20px;
+    width: calc(60% - 56px);
+    border-left: none;
+}
+.markdown-body ul li{
+    margin-left: 20px;
+}
 @media screen and (min-width: 100px) and (max-width: 1000px) {
     .main-box {
         width: 1000px;
@@ -119,7 +130,7 @@
     .content-wrap.content-box .markdown-body>*{
         width: 100%;
     }
-    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge, .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title{
+    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge, .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title,.markdown-box .markdown-body blockquote{
         float: none;
         width: calc(100% - 56px);
     }
