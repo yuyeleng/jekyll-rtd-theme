@@ -73,15 +73,15 @@ $(function(){
     $(".menu-box .menu-uls:not(."+ lang +")").remove()//在同一页面下只显示同一模块下的菜单
 
     //将菜单中的h3表格提取出来，放进子菜单中
-    let childIndex = 0
-    $(".itemHide>h3").each(function(){
+    // let childIndex = 0
+    $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").siblings(".itemHide").find("h3").each(function(){
         // console.info($(this).text());
-        $(this).attr('id', $(this).attr('id') + childIndex)
+        // $(this).attr('id', $(this).attr('id') + childIndex)
         var thisId = $(this).attr('id')
-        $(".markdown-body h3").eq(childIndex).attr('id', $(".markdown-body h3").eq(childIndex).attr('id') + childIndex)
+        // $(".markdown-body h3").eq(childIndex).attr('id', $(".markdown-body h3").eq(childIndex).attr('id') + childIndex)
         var newA = `<li class="child-li"><a class="child-a" href="#${thisId}">${$(this).text()}</a></li>`
         $(this).parent('.itemHide').siblings('.child-ul').append(newA)
-        childIndex++
+        // childIndex++
     });
     $(".itemHide").remove()
     
