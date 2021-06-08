@@ -72,11 +72,15 @@ $(function(){
     $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
     $(".menu-box .menu-uls:not(."+ lang +")").remove()//在同一页面下只显示同一模块下的菜单
 
+    let childAIndex = 0
     //将菜单中的h3表格提取出来，放进子菜单中
     $(".itemHide>h3").each(function(){
         // console.info($(this).text());
-        var newA = `<li class="child-li"><a class="child-a" href="#${$(this).text()}">${$(this).text()}</a></li>`
+        var thisId = $(this).attr('id')
+        var newA = `<li class="child-li"><a class="child-a" href="#${thisId+childAIndex}">${$(this).text()}</a></li>`
         $(this).parent('.itemHide').siblings('.child-ul').append(newA)
+        $(this).attr('id',thisId+childAIndex)
+        childAIndex++
     });
     $(".itemHide").remove()
     $(".menu-box .child-ul").on('click', '.child-a', function(){

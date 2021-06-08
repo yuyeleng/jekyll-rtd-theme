@@ -56,7 +56,7 @@
     clear: both;
     margin-bottom: 0;
 }
-.highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s, .highlight .sa, .highlight .dl{
+.highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s, .highlight .sa, .highlight .dl, .highlight .ne, .highlight .nf, .highlight .fm, .highlight .nl{
     color: #e6db74;
 }
 .highlight .mf, .highlight .mh, .highlight .il, .highlight .mi, .highlight .mo, .highlight .m, .highlight .mb, .highlight .mx{
