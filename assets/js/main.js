@@ -73,17 +73,22 @@ $(function(){
     $(".menu-box .menu-uls:not(."+ lang +")").remove()//在同一页面下只显示同一模块下的菜单
 
     //将菜单中的h3表格提取出来，放进子菜单中
+    let childIndex = 0
     $(".itemHide>h3").each(function(){
         // console.info($(this).text());
-        var thisId = $(this).attr('id')
+        var thisId = $(this).attr('id', $(this).attr('id') + childIndex)
         var newA = `<li class="child-li"><a class="child-a" href="#${thisId}">${$(this).text()}</a></li>`
         $(this).parent('.itemHide').siblings('.child-ul').append(newA)
+        childIndex++
     });
     $(".itemHide").remove()
+    
     $(".menu-box .child-ul").on('click', '.child-a', function(){
         $(this).parents('li.toc').children('a').removeClass('current')
         $(this).addClass('current').parents('.child-li').siblings().find(".child-a").removeClass('current')
-        $(this).parents('.toc').siblings('li').removeClass('current').find('.child-a').removeClass('current')
+        
+        
+        // $(this).parents('li.toc').siblings('li').removeClass('current').find('.child-a').removeClass('current')
       })
 
     //实现滚动条下滑左侧菜单高亮
