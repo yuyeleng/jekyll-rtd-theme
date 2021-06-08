@@ -78,6 +78,7 @@ $(function(){
         // console.info($(this).text());
         $(this).attr('id', $(this).attr('id') + childIndex)
         var thisId = $(this).attr('id')
+        $(".markdown-body h3").eq(childIndex).attr('id', thisId)
         var newA = `<li class="child-li"><a class="child-a" href="#${thisId}">${$(this).text()}</a></li>`
         $(this).parent('.itemHide').siblings('.child-ul').append(newA)
         childIndex++
