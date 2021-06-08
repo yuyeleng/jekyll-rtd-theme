@@ -76,7 +76,8 @@ $(function(){
     let childIndex = 0
     $(".itemHide>h3").each(function(){
         // console.info($(this).text());
-        var thisId = $(this).attr('id', $(this).attr('id') + childIndex)
+        $(this).attr('id', $(this).attr('id') + childIndex)
+        var thisId = $(this).attr('id')
         var newA = `<li class="child-li"><a class="child-a" href="#${thisId}">${$(this).text()}</a></li>`
         $(this).parent('.itemHide').siblings('.child-ul').append(newA)
         childIndex++
