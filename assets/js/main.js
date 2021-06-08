@@ -76,7 +76,7 @@ $(function(){
     $(".itemHide>h3").each(function(){
         // console.info($(this).text());
         var thisId = $(this).attr('id')
-        var newA = `<li class="child-li"><a class="child-a" href="#${thisId+childAIndex}">${$(this).text()}</a></li>`
+        var newA = `<li class="child-li"><a class="child-a" href="#${thisId}">${$(this).text()}</a></li>`
         $(this).parent('.itemHide').siblings('.child-ul').append(newA)
     });
     $(".itemHide").remove()
