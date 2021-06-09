@@ -144,7 +144,7 @@
   color: #9B7967;
   font-size: 14px;
 }
-.menu-uls .child-ul>li>a{
+.menu-box .toctree>.menu-uls .child-ul>li>a{
 	padding-left: 30px;
 }
 .search-val-box{
