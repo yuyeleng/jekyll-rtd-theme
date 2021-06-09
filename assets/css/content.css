@@ -50,13 +50,13 @@
     width: 40%;
     margin-right: 0;
     margin-left: 0;
-    background: #141418;
+    /* background: #141418; */
     padding-left: 20px;
     padding-right: 20px;
     clear: both;
     margin-bottom: 0;
 }
-.highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s, .highlight .sa, .highlight .dl, .highlight .ne, .highlight .nf, .highlight .fm, .highlight .nl{
+/* .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s, .highlight .sa, .highlight .dl, .highlight .ne, .highlight .nf, .highlight .fm, .highlight .nl{
     color: #e6db74;
 }
 .highlight .mf, .highlight .mh, .highlight .il, .highlight .mi, .highlight .mo, .highlight .m, .highlight .mb, .highlight .mx{
@@ -67,8 +67,8 @@
 }
 .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr{
     color: #66d9ef;
-}
-.markdown-body pre>code{
+} */
+pre code{
     color: #E5E5E5;
 }
 .highlight .err{
