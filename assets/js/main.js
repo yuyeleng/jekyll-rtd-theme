@@ -67,7 +67,7 @@ $(function(){
 
         window.location.href = locaHref.replace('/'+lang+'/', '/'+newLang+'/')
     })
-    console.log(lang)
+    // console.log(lang)
     //隐藏非当前语言下的导航栏和目录
     $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
     $(".menu-box .menu-uls:not(."+ lang +")").remove()//在同一页面下只显示同一模块下的菜单
@@ -102,6 +102,8 @@ $(function(){
         }
       })
     })
+
+    console.log($(".highlighter-rouge").attr('class'))
 
     
     //修改form标签的action值为当前链接
