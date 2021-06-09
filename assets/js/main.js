@@ -144,8 +144,10 @@ $(function(){
         .fail((xhr, message) => debug(message));
     })
 
-    $(".search-val-box").on('click', '.child-li', function(){
+    $(".search-val-box").on('click', '.child-a', function(){
+      console.log(location.origin + thisHref)
       var thisHref = $(this).attr('data-href')
+      
       window.location.href = location.origin + thisHref
     })
     
@@ -230,9 +232,9 @@ $(function(){
           }
           if (title || content) {
               if(page.dir.split('/')[1] === lang){//只匹配当前语言下的值
-                // let result = [
-                //     `<a class="child-a" href="" data-href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
-                //   ];
+                let result = [
+                    `<a class="child-a" data-href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
+                  ];
                   if (content) {
                     let [min, max] = [content.index - 100, content.index + 100];
                     let [prefix, suffix] = ["...", "..."];
@@ -253,8 +255,8 @@ $(function(){
                     //   )}${suffix}</p>`
                     // );   //只要标题用来放到左侧菜单中，具体内容暂时舍弃
                     
-                }
-                results.push(`<li class="border-top child-li" data-href="${ui.baseurl}${page.url}">${page.title}</li>`);
+                  }
+                  results.push(`<li class="border-top child-li">${result.join("")}</li>`);
               }
             
           }
