@@ -101,14 +101,18 @@ $(function(){
           $(".menu-box .child-ul .child-a[href='#"+ $(this).attr('id') +"']").parents('li.toc').children('a').removeClass('current')
         }
       })
+      $('.markdown-box .highlighter-rouge').each(function(){
+        if($(this).offset().top < 400){
+          codeTypeFun($(this))
+        }
+      })
     })
-
-    codeTypeFun()
-    function codeTypeFun(){//代码语言判断
-      var highArr = $(".highlighter-rouge").attr('class')
+    
+    function codeTypeFun(this_){//代码语言判断
+      var highArr = this_.attr('class')
       highArr.split(' ').map(item => {
         if(item.indexOf('language-') !== -1){
-          // $(".code-bg-title>span").text(item.split('-')[1])
+          $(".code-bg-title>span").text(item.split('-')[1])
         }
       })
     }
@@ -176,8 +180,8 @@ $(function(){
         // let text = new URL(location.href).searchParams.get("q");
         // let lang = new URL(location.href).searchParams.get("lang");
       
-        console.log(text)
-        console.log(lang)
+        // console.log(text)
+        // console.log(lang)
       
         // $("input[name='q']").val(text);
       
