@@ -112,7 +112,8 @@ $(function(){
       var highArr = this_.attr('class')
       highArr.split(' ').map(item => {
         if(item.indexOf('language-') !== -1){
-          $(".code-bg-title>span").text(item.split('-')[1])
+          console.log(item.split('-')[1])
+          $(".code-bg-title>span").text(item.split('-')[1] || 'json')
         }
       })
     }
