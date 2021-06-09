@@ -64,7 +64,6 @@ $(function(){
     $(".input-block").attr('placeholder', langObj[lang].search)
     $(".lang-box>.lang").text(langStr)
     $(".lang-box>.lang").click(function(){
-
         window.location.href = locaHref.replace('/'+lang+'/', '/'+newLang+'/')
     })
     // console.log(lang)
@@ -112,8 +111,6 @@ $(function(){
       var highArr = this_.attr('class')
       highArr.split(' ').map(item => {
         if(item.indexOf('language-') !== -1){
-          console.log(item)
-          console.log(item.split('-')[1])
           $(".code-bg-title>span").text(item.split('-')[1] || 'json')
         }
       })
@@ -149,6 +146,7 @@ $(function(){
 
     $(".search-val-box .child-a").click(function(){
       var thisHref = $(this).attr('data-href')
+      console.log(location.origin + thisHref)
       window.location.href = location.origin + thisHref
     })
     
