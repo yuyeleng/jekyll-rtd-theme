@@ -68,6 +68,9 @@
 .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr{
     color: #66d9ef;
 } */
+.markdown-body pre>code{
+    color: #E5E5E5;
+}
 pre code, .highlight .ow, .highlight .o{
     color: #E5E5E5;
 }

@@ -103,7 +103,15 @@ $(function(){
       })
     })
 
-    console.log($(".highlighter-rouge").attr('class'))
+    function codeTypeFun(){//代码语言判断
+      var highArr = $(".highlighter-rouge").attr('class')
+      highArr.split(' ').map(item => {
+        if(item.indexOf('language-') !== -1){
+          $(".code-bg-title>span").text(item.split('-')[1])
+        }
+      })
+    }()
+    
 
     
     //修改form标签的action值为当前链接
@@ -130,6 +138,11 @@ $(function(){
             
         })
         .fail((xhr, message) => debug(message));
+    })
+
+    $(".search-val-box .child-a").click(function(){
+      var thisHref = $(this).attr('data-href')
+      window.location.href = location.origin + thisHref
     })
     
     
@@ -214,7 +227,7 @@ $(function(){
           if (title || content) {
               if(page.dir.split('/')[1] === lang){//只匹配当前语言下的值
                 let result = [
-                    `<a class="child-a" href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
+                    `<a class="child-a" data-href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`,
                   ];
                   if (content) {
                     let [min, max] = [content.index - 100, content.index + 100];
