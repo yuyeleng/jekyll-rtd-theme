@@ -103,14 +103,15 @@ $(function(){
       })
     })
 
-    (function codeTypeFun(){//代码语言判断
+    codeTypeFun()
+    function codeTypeFun(){//代码语言判断
       var highArr = $(".highlighter-rouge").attr('class')
       highArr.split(' ').map(item => {
         if(item.indexOf('language-') !== -1){
           // $(".code-bg-title>span").text(item.split('-')[1])
         }
       })
-    })()
+    }
     
 
     
