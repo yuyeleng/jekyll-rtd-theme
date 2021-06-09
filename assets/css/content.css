@@ -133,7 +133,15 @@ pre code, .highlight .ow, .highlight .o{
     .content-wrap.content-box .markdown-body>*{
         width: 100%;
     }
-    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge, .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title,.markdown-box .markdown-body blockquote{
+     
+    .content-wrap.content-box .content>.markdown-box .markdown-body .custom-code-title
+    {
+        float: none;
+        width: calc(100% - 56px);
+        margin: 20px 28px; 
+        margin-bottom: -20px;
+    }
+    .content-wrap.content-box .content>.markdown-box .markdown-body>.highlighter-rouge{
         float: none;
         width: calc(100% - 56px);
         background: #22262F;
