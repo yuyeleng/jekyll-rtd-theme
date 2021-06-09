@@ -144,7 +144,7 @@ $(function(){
         .fail((xhr, message) => debug(message));
     })
 
-    $(".search-val-box .child-a").click(function(){
+    $(".search-val-box").on('click', '.child-a', function(){
       var thisHref = $(this).attr('data-href')
       console.log(location.origin + thisHref)
       window.location.href = location.origin + thisHref
