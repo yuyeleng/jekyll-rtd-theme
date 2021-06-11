@@ -35,6 +35,7 @@ $(function(){
     // console.log('0')
     // 菜单导航设置高亮
     $(".menu-box .menu-uls:not(."+ modulePath +")").remove()
+    $(".menu-box .menu-uls."+ modulePath +"").show()
     $(".header-box>.nav-box>.nav-item[data-menu='"+ modulePath +"']").addClass('active')
 
 
@@ -69,8 +70,9 @@ $(function(){
     // console.log(lang)
     //隐藏非当前语言下的导航栏和目录
     $(".header-box>.nav-box>.nav-item:not(."+ lang +")").remove()
+    $(".header-box>.nav-box>.nav-item:."+ lang +"").show()
     $(".menu-box .menu-uls:not(."+ lang +")").remove()//在同一页面下只显示同一模块下的菜单
-
+    $(".menu-box .menu-uls."+ lang +"").show()
     //将菜单中的h3表格提取出来，放进子菜单中
     // let childIndex = 0
     $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").siblings(".itemHide").find("h3").each(function(){

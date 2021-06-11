@@ -5,7 +5,7 @@
 
 {% assign dirUrl = dir.url | split: "/" %}
 {% if workdir_files[0].url -%}
-<li class="nav-item {{ dirUrl[1] }}" data-menu="{{ dirUrl[2] }}">
+<li class="nav-item {{ dirUrl[1] }}" style="display: none;" data-menu="{{ dirUrl[2] }}">
     <a href="{{workdir_files[0].url}}">{{dir.title}}</a>
 </li>
 {% endif -%}
