@@ -126,6 +126,10 @@ pre code, .highlight .ow, .highlight .o{
 .markdown-body ul li{
     margin-left: 20px;
 }
+.markdown-body table th, .markdown-body table td
+{
+    text-align: left;
+}
 @media screen and (min-width: 100px) and (max-width: 1000px) {
     .main-box {
         width: 1000px;

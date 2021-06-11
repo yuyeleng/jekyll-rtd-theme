@@ -22,6 +22,7 @@ $(function(){
         // }
         lang = pageUrl.split('/')[1]
     }
+    
     // console.log(lang)
     $(".menu-box .menu-uls>li>a[href='"+ pageUrl +"']").addClass('current').parents('li').addClass('current')
     //头部导航栏切换
