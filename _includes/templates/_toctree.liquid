@@ -14,7 +14,7 @@
     </a>
 {%- endif -%} -->
 {% assign dirUrl = dir.url | split: "/" %}
-<ul class="menu-uls {{ dirUrl[1] }} {{ dirUrl[2] }}" style="display: none;">
+<ul class="menu-uls {{ dirUrl[1] }} {{ dirUrl[2] }}">
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}

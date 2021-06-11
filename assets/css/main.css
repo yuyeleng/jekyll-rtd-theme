@@ -20,6 +20,7 @@ html,body,.main-box{
 	width: 100%;
 	display: flex;
 }
+
 .sidebar-wrap{
 	width: 260px;
 	background: #22262F;
@@ -60,7 +61,7 @@ html,body,.main-box{
 	overflow-x: auto;
 }
 .header-box .nav-box .nav-item{
-	display: flex;
+	display: none;
 	align-items: center;
 	height: 100%;
 	padding: 0 20px;
@@ -69,6 +70,9 @@ html,body,.main-box{
 	color: #fff;
 	/* cursor: pointer; */
 	position: relative;
+}
+.header-box .nav-box .nav-item.show{
+	display: flex;
 }
 .header-box .nav-box .nav-item>a{
 	color: #fff;
